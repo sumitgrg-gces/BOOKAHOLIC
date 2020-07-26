@@ -1,0 +1,109 @@
+.card {
+    // functionality
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 40rem;
+
+    &_side {
+        height: 40rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        overflow: hidden;
+        &--front {
+            background-color: $color-white;
+            
+        }
+        &--back {
+            transform: rotateY(180deg);
+            
+        }
+    }
+
+    &:hover &_side--front {
+        transform: rotateY(-180deg);
+    }
+    &:hover &_side--back {
+        transform: rotateY(0);
+    }
+    // front side stylying
+    // &_picture {
+    //     background-size: cover;
+    //     height: 40rem;
+    //     position: relative;
+    //     &--1{
+    //         background-image: url(../img/science_fiction.jpg);
+    //     }
+    //     &--2{
+    //         background-image: url(../img/romance.jpg);
+    //     }
+    //     // &--3{
+    //     //     background-image: url(../img/horror.jpg);
+    //     // }
+    //     &--4{
+    //         background-image: url(../img/fantasy.jpg);
+    //     }
+    //     &--5{
+    //         background-image: url(../img/mystery.jpg);
+    //     }
+    //     &--6{
+    //         background-image: url(../img/history.jpg);
+    //     }
+        
+    // }
+    .card_picture--1{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/science_fiction.jpg);
+    }
+    .card_picture--2{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/romance.jpg);
+    }
+    .card_picture--3{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/horror.jpg);
+    }
+    .card_picture--4{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/fantasy.jpg);
+    }
+    .card_picture--5{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/mystery.jpg);
+    }
+    .card_picture--6{
+        background-size: cover;
+        height: 40rem;
+        position: relative;
+        background-image: url(../img/history.jpg);
+    }
+
+    &_heading {
+        text-transform: uppercase;
+        color: $color-white;
+        font-weight: 700;
+        font-size: 2.8rem;
+        text-align: center;
+        position: absolute;
+        top: 12rem;
+        left: 14%;
+    }
+    
+    
+}

@@ -1,0 +1,26 @@
+.header{
+	height: 95vh;
+    background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark), url(../img/header.jpg);
+    background-position: top;
+    background-size: cover;
+    webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 100%, 0 0);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 100%, 50% 90%, 0 100%, 0 100%, 0 0);
+    position: relative; 
+&_logo-box{
+	position: absolute;
+	left: 40px;
+	top: 40px;
+}
+&_logo{
+	height: 80px;
+}
+&_text-box{
+	position: absolute;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	}
+
+
+}

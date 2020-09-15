@@ -111,7 +111,7 @@ html {
     width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .section-category {
-  background-color: #dcdcdc;
+  background-image: linear-gradient(to right bottom, rgba(45, 61, 176, 0.75), rgba(75, 193, 165, 0.8));
   padding: 25rem 0 50rem  0;
   margin-top: -10rem; }
 
@@ -187,6 +187,8 @@ html {
       background-color: #fff; }
     .card_side--back {
       transform: rotateY(180deg); }
+      .card_side--back-1 {
+        background-image: linear-gradient(to right bottom, rgba(69, 251, 209, 0.8), rgba(45, 61, 176, 0.75)); }
   .card:hover .card_side--front {
     transform: rotateY(-180deg); }
   .card:hover .card_side--back {
@@ -230,3 +232,18 @@ html {
     position: absolute;
     top: 12rem;
     left: 14%; }
+  .card_cta {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card_textbox {
+    text-align: center;
+    margin-bottom: 6rem; }
+  .card_text {
+    font-size: 1.45rem;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 550; }

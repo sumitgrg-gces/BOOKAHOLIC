@@ -4,6 +4,7 @@
     -moz-perspective: 150rem;
     position: relative;
     height: 40rem;
+    
 
     &_side {
         height: 40rem;
@@ -22,6 +23,12 @@
         }
         &--back {
             transform: rotateY(180deg);
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+
+            
+            
             
         }
     }
@@ -32,7 +39,7 @@
     &:hover &_side--back {
         transform: rotateY(0);
     }
-    // front side stylying
+    // front side styling
     // &_picture {
     //     background-size: cover;
     //     height: 40rem;
@@ -104,6 +111,24 @@
         top: 12rem;
         left: 14%;
     }
-    
+    &_cta{
+        position: absolute;
+        top: 60% ;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        text-align: center;
+    }
+    &_textbox{
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+    &_text{
+        font-size: 1.45rem;
+        text-transform: capitalize;
+        color: white;
+        font-weight: 550;
+
+    }
     
 }

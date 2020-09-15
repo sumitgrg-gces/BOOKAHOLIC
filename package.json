@@ -1,10 +1,10 @@
 {
   "name": "bookaholic",
   "version": "1.0.0",
-  "description": "lnading page for bookaholic",
+  "description": "landing page for bookaholic",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "sumit",
   "license": "ISC",

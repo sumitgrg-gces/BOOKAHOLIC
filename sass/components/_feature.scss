@@ -1,0 +1,27 @@
+.features {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .4);
+    border-radius: 3px;
+    padding: 1.5rem;
+    padding-left: 7rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    
+
+   
+
+    &_text {
+        transform: skewX(12deg);
+        transition: all;
+    }
+    &:hover &_text{
+        transform: translateY(-1.5rem) ;
+    }
+
+   
+
+    
+}

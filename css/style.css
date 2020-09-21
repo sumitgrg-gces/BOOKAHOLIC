@@ -7,11 +7,10 @@
 
 body {
   font-weight: 400;
-  font-family: "lato",sans-serif;
+  font-family: "lato", sans-serif;
   font-size: 16px;
   line-height: 1.7;
-  color: #333;
-  padding: 30px; }
+  color: #333; }
 
 html {
   font-size: 62.5%; }
@@ -326,7 +325,6 @@ html {
     object-fit: cover; }
 
 .features {
-  width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.4);
@@ -352,3 +350,78 @@ html {
   .developer:hover .developer_caption {
     visibility: visible;
     color: rgba(75, 193, 165, 0.8); }
+
+.navigation {
+  width: 250px;
+  height: 100vh;
+  background: black; }
+  .navigation_bar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20% 0 0 60%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100; }
+  .navigation_icon {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+  .navigation_list {
+    text-align: right; }
+  .navigation_item {
+    list-style: none;
+    margin: 20px; }
+  .navigation_link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 3px 0; }
+    .navigation_link::before, .navigation_link::after {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: rgba(75, 193, 165, 0.8);
+      position: absolute;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 0.5s; }
+    .navigation_link::after {
+      bottom: 0;
+      transform-origin: right; }
+    .navigation_link::before {
+      top: 0;
+      transform-origin: left; }
+
+.navigation_link:hover::before,
+.navigation_link:hover::after {
+  transform: scaleX(1); }
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: rgba(75, 193, 165, 0.8);
+  transition: all 0.8s; }
+
+.change .line-1 {
+  transform: rotatez(-405deg) translate(-8px, 6px); }
+
+.change .line-2 {
+  opacity: 0; }
+
+.change .line-3 {
+  transform: rotatez(405deg) translate(-8px, -6px); }

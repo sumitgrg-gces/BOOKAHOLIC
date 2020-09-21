@@ -1,0 +1,119 @@
+.navigation {
+    width: 250px;
+    height: 100vh;
+    background: black;
+
+    &_bar {
+        width: 200px;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20% 0 0 60%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+
+
+
+    }
+
+    &_icon {
+        width: 35px;
+        height: 30px;
+        position: fixed;
+        top: 80px;
+        right: 50px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+
+    }
+
+    &_list {
+        text-align: right;
+
+
+
+    }
+
+    &_item {
+        list-style: none;
+        margin: 20px;
+
+
+    }
+
+    &_link {
+        text-decoration: none;
+        color: $color-white;
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        position: relative;
+        padding: 3px 0;
+
+
+        &::before,
+        &::after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+            position: absolute;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        &::after {
+            bottom: 0;
+            transform-origin: right;
+        }
+
+        &::before {
+            top: 0;
+            transform-origin: left;
+
+        }
+
+
+
+
+    }
+}
+
+
+
+.navigation_link:hover::before,
+.navigation_link:hover::after {
+    transform: scaleX(1);
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: $color-primary;
+    transition: all 0.8s;
+
+}
+
+.change .line-1 {
+    transform: rotatez(-405deg) translate(-8px, 6px);
+
+}
+
+.change .line-2 {
+    opacity: 0;
+}
+
+.change .line-3 {
+    transform: rotatez(405deg) translate(-8px, -6px);
+
+}

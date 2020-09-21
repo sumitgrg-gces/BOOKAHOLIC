@@ -1,21 +1,22 @@
 *,
 *::after,
-*::before{
-	padding:0;
-	margin:0;
-	box-sizing:border-box;
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 
 }
-body{
-	font-weight: 400;
-	font-family: "lato",sans-serif;
-	font-size: 16px;
-	line-height:1.7 ;
-	color: $color-grey-dark;
-padding: 30px;
-}	
 
-html
-{
+body {
+	font-weight: 400;
+	font-family: "lato", sans-serif;
+	font-size: 16px;
+	line-height: 1.7;
+	color: $color-grey-dark;
+	//padding: 30px;
+}
+
+html {
 	font-size: 62.5%;
+	
 }

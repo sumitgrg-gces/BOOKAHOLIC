@@ -17,10 +17,11 @@
 
 		.login{
 
-			
+			position: relative;
 			width: 250px;
 			padding: 80px 80px;
-			margin-top: 50px;
+			margin: 0 auto;
+			margin-top: 5rem;
 			background: rgba(0,0,0,0.5);
 
 			
@@ -93,10 +94,11 @@ border-radius: 50%;
 width: 135px;
 height:135px;
 position: absolute;
-top: 12px;
+top: -50px;
+left: clac(50% - 50px);
 z-index: 1;
 opacity: 0.7;
-left:45.5%;
+
 }
 
 
@@ -107,10 +109,12 @@ left:45.5%;
 </head>
 <body> 	
 	
-		<img class="i" src="avatar.png">
-		<center>
+		
 	<div class ="login" >
- 		<h2>Login:</h2>
+		<center>
+		 <h2>Login:</h2>
+		 <img class="i" src="avatar.png">
+		
 
  	<form action="handle.php" method="POST">
  		
@@ -120,7 +124,8 @@ left:45.5%;
 	 <a href="#" >Forget Password</a><br>
 	 <a href="#" style="font-size: 18px;" >SIGN UP</a>
 
- 	</form>
+	 </form>
+	 </center>
  </div>
 </body>
 </html>

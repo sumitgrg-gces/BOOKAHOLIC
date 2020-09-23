@@ -443,12 +443,16 @@ html {
   display: none; }
 
 .popup_content {
-  width: 250px;
-  height: 500px;
-  background-color: white;
+  width: 300px;
+  height: 370px;
+  background-color: #f8f8f8;
   position: relative;
   padding: 20px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  opacity: 0.9; }
+  .popup_content_signup {
+    width: 400px;
+    height: 635px; }
 
 .popup_close1, .popup_close2 {
   position: absolute;
@@ -458,3 +462,60 @@ html {
   font-weight: 500;
   transform: rotate(45deg);
   cursor: pointer; }
+
+.avatar {
+  border-radius: 50%;
+  width: 135px;
+  height: 135px;
+  position: absolute;
+  left: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%); }
+
+.login_heading {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .login_heading_signup {
+    top: 18%; }
+  .login_heading_login {
+    top: 31%; }
+
+.form {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; }
+  .form_signup {
+    top: 62%; }
+  .form_login {
+    top: 69%; }
+
+input[type=Text], input[type=Password], input[type=number] {
+  border: 2px solid black;
+  color: black;
+  background: transparent;
+  border-radius: 20px;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px; }
+
+input[type=Submit] {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: white solid 1px;
+  border-radius: 20px; }
+
+input[type=Submit]:hover {
+  background-color: blue; }
+
+.h-line {
+  background-color: #295788;
+  height: 2.2px;
+  margin-bottom: 12px; }

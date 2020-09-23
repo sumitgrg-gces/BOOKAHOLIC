@@ -363,15 +363,42 @@
 
 <div class="popup_bg1">
     <div class="popup_content popup_content_signup">
-        <div class="signupcontent"><h2>HELLO</h2></div>
+        <img class="avatar" src="avatar.png">
+        <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up</h2>
         <div class="popup_close1">+</div>
+        <form class="form form_signup"  action="handle.php" method="POST">
+            <input type="Text" name="name" placeholder=" Your Name">
+
+ 		
+            <input type="Text" name="email" placeholder=" Your Email">
+            <input type="Password" name="password" placeholder="Enter password">
+            <input type="Password" name="password" placeholder="confirm password">
+            <input type="Text" name="location" placeholder=" Your locaion">
+            <input type="number" name="email" placeholder=" Your phone number">
+            <hr class="h-line">
+
+            <p><span><input type="checkbox">&nbsp I agree to the terms of services</span></p>
+            <input type="Submit" name="login" value="sign-up">
+            
+            </form>
     </div>
     </div>
 
 <div class="popup_bg2">
     <div class="popup_content popup_content_login">
         
+        
+        
+        <img class="avatar" src="avatar.png">
+        <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN</h2>
         <div class="popup_close2">+</div>
+		<form class="form form_login"  action="handle.php" method="POST">
+ 		
+ 	<input type="Text" name="email" placeholder=" Your Email">
+ 	<input type="Password" name="password" placeholder="Enter password">
+ 	<input type="Submit" name="login" value="Login">
+	 
+	 </form>
     </div>
     
 </div>

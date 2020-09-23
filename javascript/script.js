@@ -17,6 +17,7 @@ function(){
     document.querySelector('.popup_bg1').style.display = 'flex';
 });
 
+
 document.querySelector('.popup_close1').addEventListener('click',
 function(){
     document.querySelector('.popup_bg1').style.display = 'none';

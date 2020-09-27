@@ -8,6 +8,15 @@ menuIcon.addEventListener("click", () => {
 navbar.classList.toggle("change");
 });
 
+//signup and login showup from right
+// const clicksignup = document.getElementById('popup-signup');
+// const signupcontent = document.getElementById('popup_content_signup');
+
+
+// clicksignup.addEventListener("click", () => {
+//     signupcontent.classList.toggle("slide");
+// });
+
 
 //popup mechanism
 

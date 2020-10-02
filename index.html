@@ -7,9 +7,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/icon-font.css">
+    
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    
 
     <title>Bookholic</title>
 </head>
@@ -35,7 +35,7 @@
             </ul>
         </nav>
 <header class="header">
-    <!-- <div id="particles-js-1"></div> -->
+    <!-- <div class="particles-js-1"></div> -->
     
     <div class="header_logo-box">
         <img class="header_logo" src="img/logo_transparent.png">
@@ -45,7 +45,10 @@
             <span class="heading-primary-main">BOOKAHOLIC</span>
             <span class="heading-primary-secondary">have a libary at home</span>
         </h1>
-        <a class="btn btn-search" href="#">search books</a>
+        <form id="search_form" action="#">
+            <input type="text" class="search" placeholder="search books">
+        </form>
+        <!-- <a class="btn btn-search" href="#">search books</a> -->
     </div>
 
 </header>
@@ -154,7 +157,7 @@
                         <div class="card_textbox">
                         <p class="card_text">Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life</p>
                     </div>
-                    <a href="#" class="btn btn-search">BOOKS</a>
+                    <a href="category-science_fiction.html" class="btn btn-search">BOOKS</a>
                 </div>
                     
 
@@ -373,14 +376,15 @@
         <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up</h2>
         <div class="popup_close1">+</div>
         <form class="form form_signup"  action="handle.php" method="POST">
-            <input type="Text" name="name" placeholder=" Your Name">
+            <input type="Text" class="input" name="name" placeholder=" Your Name">
 
  		
-            <input type="Text" name="email" placeholder=" Your Email">
-            <input type="Password" name="password" placeholder="Enter password">
-            <input type="Password" name="password" placeholder="confirm password">
-            <input type="Text" name="location" placeholder=" Your locaion">
-            <input type="number" name="email" placeholder=" Your phone number">
+            <input type="Text" class="input" name="email" placeholder=" Your Email">
+            
+            <input type="Password" class="input" name="password" placeholder="Enter password">
+            <input type="Password" class="input" name="password" placeholder="confirm password">
+            <input type="Text" class="input" name="location" placeholder=" Your locaion">
+            <input type="number" class="input" name="email" placeholder=" Your phone number">
             <hr class="h-line">
 
             <p><span><input type="checkbox">&nbsp I agree to the terms of services</span></p>
@@ -400,8 +404,8 @@
         <div class="popup_close2">+</div>
 		<form class="form form_login"  action="handle.php" method="POST">
  		
- 	<input type="Text" name="email" placeholder=" Your Email">
- 	<input type="Password" name="password" placeholder="Enter password">
+ 	<input type="Text" class="input" name="email" placeholder=" Your Email">
+ 	<input type="Password" class="input" name="password" placeholder="Enter password">
  	<input type="Submit" name="login" value="Login">
 	 
 	 </form>

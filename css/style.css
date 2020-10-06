@@ -190,6 +190,28 @@ html {
   width: 100%;
   height: 100%; }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s; }
+  .overlay_content {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: white; }
+
+.overlay:hover {
+  opacity: 1;
+  cursor: pointer; }
+
 .sfbc {
   text-align: center;
   font-size: 1.6rem; }

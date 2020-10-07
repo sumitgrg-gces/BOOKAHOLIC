@@ -157,7 +157,7 @@
                         <div class="card_textbox">
                         <p class="card_text">Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life</p>
                     </div>
-                    <a href="category-science_fiction.html" class="btn btn-search">BOOKS</a>
+                    <a href="category-science_fiction/category-science_fiction.html" class="btn btn-search">BOOKS</a>
                 </div>
                     
 
@@ -375,7 +375,7 @@
         <img class="avatar" src="avatar.png">
         <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up</h2>
         <div class="popup_close1">+</div>
-        <form class="form form_signup"  action="handle.php" method="POST">
+        <form class="form form_signup"  action="php/insert.php" method="POST">
             <input type="Text" class="input" name="name" placeholder=" Your Name">
 
  		
@@ -384,11 +384,11 @@
             <input type="Password" class="input" name="password" placeholder="Enter password">
             <input type="Password" class="input" name="password" placeholder="confirm password">
             <input type="Text" class="input" name="location" placeholder=" Your locaion">
-            <input type="number" class="input" name="email" placeholder=" Your phone number">
+            <input type="number" class="input" name="number" placeholder=" Your phone number">
             <hr class="h-line">
 
             <p><span><input type="checkbox">&nbsp I agree to the terms of services</span></p>
-            <input type="Submit" name="login" value="sign-up">
+            <input type="Submit" name="submit" value="sign-up">
             
             </form>
     </div>
@@ -402,7 +402,7 @@
         <img class="avatar" src="avatar.png">
         <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN</h2>
         <div class="popup_close2">+</div>
-		<form class="form form_login"  action="handle.php" method="POST">
+		<form class="form form_login"  action="php/insert.php" method="POST">
  		
  	<input type="Text" class="input" name="email" placeholder=" Your Email">
  	<input type="Password" class="input" name="password" placeholder="Enter password">

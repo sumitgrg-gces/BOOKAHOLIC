@@ -21,6 +21,31 @@
     height: 100%;
 
 }
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &_content{
+        font-weight: 400;
+        font-size: $default-font-size;
+        color: white;
+
+    }
+
+}
+.overlay:hover{
+    opacity: 1;
+    cursor: pointer;
+}
 .sfbc{
     text-align: center;
     font-size: $default-font-size;

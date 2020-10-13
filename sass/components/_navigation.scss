@@ -1,7 +1,5 @@
 .navigation {
-    width: 250px;
-    height: 100vh;
-    background: black;
+    
 
     &_bar {
         width: 200px;
@@ -10,8 +8,8 @@
         top: 0;
         right: 0;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: center;//align the flex items horizontally on default flex direction(row)...other value flex-start,flex-end,space-between etc..
+        align-items: center;//to align the flex items vertically
         border-radius: 55% 0 0 60%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 100;

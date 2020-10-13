@@ -4,4 +4,5 @@
         display: table;
         clear: both;
     }
-}
+}// or simply overflow:auto
+//it fixes the problem creted when the content inside a container is bigger causing overflow.

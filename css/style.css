@@ -17,10 +17,9 @@ html {
 
 #particles-js {
   width: 100%;
-  height: 100%;
+  height: inherit;
   position: absolute;
-  top: 0;
-  z-index: 11111; }
+  top: 0; }
 
 @keyframes moveinleft {
   0% {
@@ -85,7 +84,8 @@ html {
   .header_logo-box {
     position: absolute;
     left: 40px;
-    top: 40px; }
+    top: 40px;
+    z-index: 100; }
   .header_logo {
     height: 80px; }
     .header_logo-1 {
@@ -114,24 +114,17 @@ html {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
     width: calc((100% - 2 * 6rem) / 3); }
-  .row .col-2-of-3 {
-    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
-  .row .col-2-of-4 {
-    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
-  .row .col-3-of-4 {
-    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
   .row .col-1-of-5 {
     width: calc((100% - 4 * 6rem) / 5); }
 
 .footer {
   background-color: #333;
-  padding: 8rem 0;
+  padding: 3rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
   .footer_navigation {
-    padding-top: 2rem;
     text-align: center;
     margin: 0 auto; }
   .footer_list {
@@ -190,7 +183,7 @@ html {
   width: 100%;
   height: 100%; }
 
-.overlay {
+.overlay, .d_overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -203,7 +196,7 @@ html {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s; }
-  .overlay_content {
+  .overlay_content, .d_overlay_content {
     font-weight: 400;
     font-size: 1.6rem;
     color: white; }
@@ -211,6 +204,11 @@ html {
 .overlay:hover {
   opacity: 1;
   cursor: pointer; }
+
+.d_overlay:hover {
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 50%; }
 
 .sfbc {
   text-align: center;
@@ -273,13 +271,21 @@ html {
   text-align: center; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 7rem; }
 
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
+
+.u-caption-colorful {
+  background-image: linear-gradient(to left, #168468, #2c06c2);
+  color: transparent;
+  -webkit-background-clip: text; }
+
+.u-center-content {
+  margin: 0 auto; }
 
 .card {
   perspective: 150rem;
@@ -351,9 +357,12 @@ html {
     font-weight: 700;
     font-size: 2.8rem;
     text-align: center;
-    position: absolute;
-    top: 12rem;
-    left: 14%; }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
   .card_cta {
     position: absolute;
     top: 60%;
@@ -421,13 +430,12 @@ html {
   transform: translateY(3rem) skewX(-12deg); }
 
 .developer {
-  height: 20rem;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(-4em);
-  transition: transform 2s 0.25s cubic-bezier(0, 1, 0.3, 1), opacity 0.3s 0.25s ease-out; }
+  height: 13rem;
+  width: 15rem;
+  position: relative; }
   .developer_img {
     height: 100%;
+    width: 100%;
     border-radius: 50%; }
   .developer_caption {
     visibility: hidden; }
@@ -435,67 +443,63 @@ html {
     visibility: visible;
     color: rgba(75, 193, 165, 0.8); }
 
-.developer.is-visible {
-  opacity: 1;
-  transform: translateY(3rem); }
+.navigation_bar {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 55% 0 0 60%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  right: -300px;
+  transition: right .8s; }
 
-.navigation {
-  width: 250px;
-  height: 100vh;
-  background: black; }
-  .navigation_bar {
-    width: 200px;
-    height: 100%;
-    position: fixed;
+.navigation_icon {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  top: 80px;
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.navigation_list {
+  text-align: right; }
+
+.navigation_item {
+  list-style: none;
+  margin: 20px; }
+
+.navigation_link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 3px 0; }
+  .navigation_link::before, .navigation_link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: rgba(75, 193, 165, 0.8);
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s; }
+  .navigation_link::after {
+    bottom: 0;
+    transform-origin: right; }
+  .navigation_link::before {
     top: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 55% 0 0 60%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    right: -300px;
-    transition: right .8s; }
-  .navigation_icon {
-    width: 35px;
-    height: 30px;
-    position: fixed;
-    top: 80px;
-    right: 50px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-  .navigation_list {
-    text-align: right; }
-  .navigation_item {
-    list-style: none;
-    margin: 20px; }
-  .navigation_link {
-    text-decoration: none;
-    color: #fff;
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 3px 0; }
-    .navigation_link::before, .navigation_link::after {
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: rgba(75, 193, 165, 0.8);
-      position: absolute;
-      left: 0;
-      transform: scaleX(0);
-      transition: transform 0.5s; }
-    .navigation_link::after {
-      bottom: 0;
-      transform-origin: right; }
-    .navigation_link::before {
-      top: 0;
-      transform-origin: left; }
+    transform-origin: left; }
 
 .navigation_link:hover::before,
 .navigation_link:hover::after {
@@ -557,8 +561,8 @@ html {
   height: 135px;
   position: absolute;
   left: 50%;
-  opacity: 1;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  opacity: 1; }
 
 .login_heading {
   position: absolute;
@@ -613,3 +617,8 @@ input[type=Submit]:hover {
 
 slide {
   visibility: visible; }
+
+.error {
+  font-size: 1.2rem;
+  color: #295788;
+  display: inline; }

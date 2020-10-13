@@ -1,12 +1,27 @@
-.u-center-text{
+.u-center-text {
     text-align: center;
 }
-.u-margin-bottom-big{
-    margin-bottom: 8rem;
+
+.u-margin-bottom-big {
+    margin-bottom: 7rem;
 }
-.u-margin-bottom-small{
+
+.u-margin-bottom-small {
     margin-bottom: 1.5rem;
 }
-.u-margin-bottom-medium{
+
+.u-margin-bottom-medium {
     margin-bottom: 4rem;
+}
+
+.u-caption-colorful {
+
+    background-image: linear-gradient(to left, rgb(22, 132, 104), rgb(44, 6, 194));
+
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.u-center-content {
+    margin: 0 auto;
 }

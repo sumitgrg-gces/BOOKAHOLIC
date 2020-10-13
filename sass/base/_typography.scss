@@ -23,10 +23,10 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: 3.5rem;
-        display: inline-block;
+        display: inline-block;//as text-align is set center in container 
         background-image: linear-gradient(to right, $color-primary, $color-primary-dark) ;
         color: transparent;
-        -webkit-background-clip: text;
+        -webkit-background-clip: text;//background gets cliped only where text is
     }   
     
     .heading-tertiary {
@@ -34,3 +34,4 @@
         font-weight: 700;
         text-transform: uppercase;
     }
+

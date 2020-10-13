@@ -53,8 +53,9 @@ width: 135px;
 height:135px;
 position: absolute;
 left: 50%;
-opacity: 1;
+
 transform: translate(-50%,-50%);
+opacity: 1;
 	
 }
  
@@ -144,4 +145,13 @@ input[type=Submit]:hover
 }
 slide{
     visibility: visible;
+}
+
+
+
+.error{
+    font-size: 1.2rem;
+    color: $color-line;
+    display: inline;
+
 }

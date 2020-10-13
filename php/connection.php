@@ -1,4 +1,4 @@
-<!-- // database name is project and table is team. -->
+<!-- // database name is bookaholic and table is sign-up. -->
 <?php
 $connection=mysqli_connect('localhost','root','','bookaholic');
 
@@ -15,3 +15,4 @@ $connection=mysqli_connect('localhost','root','','bookaholic');
 else{
 	die("connection failed!");
 }
+  

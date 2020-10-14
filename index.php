@@ -71,7 +71,7 @@ session_start();
                 </video>
             </div>
 
-            <div class="u-center-text u-margin-bottom-small">
+            <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
                     OUR FEATURES
                 </h2>
@@ -84,9 +84,10 @@ session_start();
                         <div class="features_text">
                             <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">search,read and download for free</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
-                                ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero
-                                repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
+                                Your favorite book is just one search away, with over hundreds of ebooks to choose form our dynamic database.
+                                You can choose either to read online or download any content you want to go through them later at your convenience.
+
+
                             </p>
                         </div>
                     </div>
@@ -99,9 +100,8 @@ session_start();
                         <div class="features_text">
                             <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">handy for students</h3>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur
-                                ducimus quam nisi exercitationem omnis earum qui. Aperiam, ipsum sapiente aspernatur libero
-                                repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
+                            students can easily find the text books they want on 'student'category section. Instead of carrying a bag full of books, it is easier to carry a mobile device that supports eBooks, this allows students to refer to their notes and course materials anytime they want.
+                             
                             </p>
                         </div>
                     </div>
@@ -128,7 +128,7 @@ session_start();
                             <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">register and upload </h3>
                             <p>
                                 Registered users have ability to upload and publish their content for sharing. Unlike, Anyother E-books sites Here users can upload any
-                                repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
+                                ebooks on their disposal after validation with no worries unless its against law.
                             </p>
                         </div>
                     </div>
@@ -139,7 +139,7 @@ session_start();
 
         </section>
         <section class="section-category">
-            <div class="u-center-text u-margin-bottom-big">
+            <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
                     CATEGORIES
                 </h2>

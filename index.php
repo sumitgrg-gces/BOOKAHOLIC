@@ -40,6 +40,27 @@ session_start();
             <li class="navigation_item"><a href="#" class="navigation_link">home</a></li>
 
         </ul>
+        <script>
+        var signUp = document.getElementById('popup-signup');
+        console.log(signUp);
+        
+        <?php 
+         
+        // if(isset($_SESSION['name_error']) || isset($_SESSION['email_error']) || isset($_SESSION['password_error']) || isset($_SESSION['cpassword_error']) || isset($_SESSION['phone_error']) || isset($_SESSION['agree_error']) ){
+        // echo "signUp.dispatchEvent('click')" ;
+        if(isset($_GET['err'])){
+            echo "window.addEventListener('load', function(){
+                signUp.dispatchEvent(new Event('click'));
+                }) ;";
+
+        }
+        
+        // }
+        
+            ?>
+            </script>
+
+        
     </nav>
     <header class="header">
         <!-- <div class="particles-js-1"></div> -->
@@ -440,7 +461,7 @@ session_start();
                     </div>
 
                 <input type="Text" class="input" name="location" placeholder=" Your location" required>
-                
+                <div class="error"></div>
                 <input type="number" class="input" name="phone" placeholder=" Your phone number">
                 <div class="error">
                     <?php

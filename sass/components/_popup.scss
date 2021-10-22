@@ -1,5 +1,6 @@
 .popup{
     &_bg1,
+    &_bg3,
     &_bg2{
         width: 100%;
         height: 100%;
@@ -30,9 +31,18 @@
             // transition: visibility 0.9s;
             
         }
+
+        &_upload{
+            width:400px ;
+            height: 585px;
+            // visibility: hidden;
+            // transition: visibility 0.9s;
+            
+        }
         
     }
     &_close1 ,
+    &_close3,
     &_close2{
 
         position: absolute;
@@ -75,6 +85,7 @@ opacity: 1;
 }
 .form{
     position: absolute;
+    top: 65%;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 90%;
@@ -105,7 +116,11 @@ opacity: 1;
     padding: 10px;
     text-align: center;
     width: 100%;
-    
+    // margin-bottom: 20px;
+
+    &_login{
+        margin-bottom: 20px;
+    }
     
    
 
@@ -116,7 +131,7 @@ input[type=Submit]
     padding: 10px;
     width: 100%;
     margin-bottom: 20px;
-    margin-top: 10px;
+    // margin-top: 7px;
 
     font-size: 16px;
     
@@ -150,8 +165,8 @@ slide{
 
 .error{
     font-size: 1.2rem;
-    color: $color-line;
-    
-    height:20px;
+    color: red;
+    // display: inline;
+    height: 22px;
 
 }

@@ -1,4 +1,4 @@
-<!-- // database name is bookaholic and table is sign-up. -->
+<!-- // database name is bookaholic and table is signnn-up. -->
 <?php
 $connection=mysqli_connect('localhost','root','','bookaholic');
 

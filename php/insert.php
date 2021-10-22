@@ -117,21 +117,18 @@ if(isset($_POST['submit'])){
 	
 
 if($isvalid ){
-    $Epassword = password_hash($password,PASSWORD_DEFAULT);
-
-    $sql="INSERT INTO `sign-up`(name,email,password,location,phone) values('$n','$e' ,'$Epassword','$l','$p')";
+    $sql="INSERT INTO `Signnn-up`(name,email,password,location,phone) values('$n','$e' ,'$password','$l','$p')";
     mysqli_query($connection,$sql); 
     header("location: ../index.php ");
 }
 else{
-
-    header("location: ../index.php?err");
-    // // echo"invalid data";
+    header("location: ../index.php");
+    echo"invalid data";
 }
 
 print_r(mysqli_error_list($connection));
 
 
 }
-// /*
-// echo '<script>alert(".....")</>";
+/*
+echo '<script>alert(".....")</>";

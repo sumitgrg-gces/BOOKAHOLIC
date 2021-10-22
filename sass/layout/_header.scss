@@ -18,6 +18,17 @@
 		height: 92px;
 	}
 }
+&_avatar-box{
+	position: fixed;
+	right: 39px;
+	top: 10px;
+	z-index: 1000;
+	
+}
+&_avatar{
+	height: 50px;
+	border-radius: 50%;
+}
 &_text-box{
 	position: absolute;
 	left: 50%;

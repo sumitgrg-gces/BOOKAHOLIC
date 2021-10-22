@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$isLoggedIn = isset($_SESSION['id']) ;
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +15,15 @@ session_start();
 
     <link rel="stylesheet" href="css/style.css">
 
+        <!-- <?php if($isLoggedIn){?> 
+        
+            <h2>logged in id =  <?= $_SESSION['id'] ?></h2>
+        <?php } ?> -->
 
-    <title>Bookholic</title>
+    <title>Bookholic <?php if($isLoggedIn) echo "login"; ?></title>
 </head>
 
 <body>
-
-
 
 
     <nav class="navigation_bar">
@@ -33,34 +35,21 @@ session_start();
 
         </div>
         <ul class="navigation_list">
-            <li class="navigation_item"><a href="#" class="navigation_link" id="popup-signup">sign up</a></li>
-            <li class="navigation_item"><a href="#" class="navigation_link" id="popup-login">log-in</a></li>
-            <li class="navigation_item"><a href="#" class="navigation_link">about us</a></li>
-            <li class="navigation_item"><a href="#" class="navigation_link">help</a></li>
-            <li class="navigation_item"><a href="#" class="navigation_link">home</a></li>
-
+            <?php if(!$isLoggedIn) { ?>
+                <li class="navigation_item"><a href="#" class="navigation_link" id="popup-signup">sign up</a></li>
+                
+                <li class="navigation_item"><a href="#" class="navigation_link" id="popup-login">log-in</a></li>
+                <?php } ?>
+                <li class="navigation_item"><a href="#" class="navigation_link">about us</a></li>
+                <li class="navigation_item"><a href="#" class="navigation_link">help</a></li>
+                <li class="navigation_item"><a href="#" class="navigation_link">home</a></li>
+                
+                <?php if($isLoggedIn) { ?>
+                    <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
+                
+                <li class="navigation_item"><a href="php/logout.php" class="navigation_link" id="popup-logout">log-out</a></li>
+            <?php } ?>
         </ul>
-        <script>
-        var signUp = document.getElementById('popup-signup');
-        console.log(signUp);
-        
-        <?php 
-         
-        // if(isset($_SESSION['name_error']) || isset($_SESSION['email_error']) || isset($_SESSION['password_error']) || isset($_SESSION['cpassword_error']) || isset($_SESSION['phone_error']) || isset($_SESSION['agree_error']) ){
-        // echo "signUp.dispatchEvent('click')" ;
-        if(isset($_GET['err'])){
-            echo "window.addEventListener('load', function(){
-                signUp.dispatchEvent(new Event('click'));
-                }) ;";
-
-        }
-        
-        // }
-        
-            ?>
-            </script>
-
-        
     </nav>
     <header class="header">
         <!-- <div class="particles-js-1"></div> -->
@@ -68,6 +57,11 @@ session_start();
         <div class="header_logo-box">
             <img class="header_logo" src="img/logo_transparent.png">
         </div>
+        <?php if($isLoggedIn){?>
+            <div class="header_avatar-box">
+            <img class="header_avatar" src="avatar.png">
+        </div>
+        <?php }?>
         <div class="header_text-box">
             <h1 class="heading-primary">
                 <span class="heading-primary-main">BOOKAHOLIC</span>
@@ -227,7 +221,6 @@ session_start();
                                     <span class="card_heading-span ">
                                         HORROR
                                     </span>
-
                                 </h4>
                             </div>
                         </div>
@@ -462,6 +455,7 @@ session_start();
 
                 <input type="Text" class="input" name="location" placeholder=" Your location" required>
                 <div class="error"></div>
+                
                 <input type="number" class="input" name="phone" placeholder=" Your phone number">
                 <div class="error">
                     <?php
@@ -480,8 +474,48 @@ session_start();
                     </div>
 
                 <input type="Submit" name="submit" value="sign-up">
+
+                <?php 
+                
+                // document.getElementById("popup-signup").dispatchEvent( new Event("click"))
+                $hasError = false ;
+
+
+                $errKeys = [
+                    'agree_error',
+'name_error',
+'email_error',
+'password_error',
+'cpassword_error',
+'phone_error'
+                ];
+
+                foreach($errKeys as $ekey){
+                    if(!empty($_SESSION[$ekey])){
+                        $hasError = true ;
+                    }
+                }
+
+                if($hasError){
+                    echo "<script> 
+                    window.addEventListener('load', function(){
+                    document.getElementById('popup-signup').dispatchEvent( new Event('click'));}) ;
+                    </script>" ;
+                }
+                
+                ?>
                
-                <?php session_destroy(); ?>
+                <?php 
+                
+                unset($_SESSION['agree_error']) ;
+                unset($_SESSION['name_error']) ;
+                unset($_SESSION['email_error']) ;
+                unset($_SESSION['password_error']) ;
+                unset($_SESSION['cpassword_error']) ;
+                unset($_SESSION['phone_error']) ;
+
+                
+                ?>
 
             </form>
         </div>
@@ -497,14 +531,74 @@ session_start();
             <div class="popup_close2">+</div>
             <form class="form form_login" action="php/handle.php" method="POST">
 
-                <input type="Text" class="input" name="email" placeholder=" Your Email">
-                <input type="Password" class="input" name="password" placeholder="Enter password">
+                <input type="Text" class="input_login" name="email" placeholder=" Your Email">
+                <input type="Password" class="input_login" name="password" placeholder="Enter password">
                 <input type="Submit" name="login" value="Login">
 
             </form>
         </div>
 
     </div>
+
+    <div class="popup_bg3">
+        <div class="popup_content popup_content_upload">
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
+            <div class="popup_close3">+</div>
+            <form class="form form_signup" action="php/insert.php" method="POST">
+                <input type="Text" class="input" name="name" placeholder=" Book Name">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <input type="Text" class="input" name="name" placeholder="Author Name">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <input type="Text" class="input" name="name" placeholder="category">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <input type="Text" class="input" name="name" placeholder="Description">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+
+                    <input type="Submit" name="submit" value="Attach File">
+                    <input type="Submit" name="submit" value="Upload Image">
+
+
+                    <input type="Submit" name="submit" value="UPLOAD">
+
+                
+
+            </form>
+        </div>
+    </div>
+
 
 
 

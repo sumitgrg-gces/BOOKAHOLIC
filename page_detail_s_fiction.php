@@ -111,18 +111,11 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <br 
     <input type="radio" id="book" checked>
         <label for="book" >Available in Hardcopy</label><br><br><br>
-
-        <?php 
-        
-        
-        
-        print_r($Result) ;
-        
-        ?>
      
      <div> 
+
                 
-                <a href="/php/uploads/<?= $Result['pdf'] ?>" download> free Download </a>
+                <a href="php/uploads/<?= $Result['pdf'] ?>" download> free Download </a>
                 <?php echo $Result['pdf'];?>
 
                 <!-- <a href="#" class="button">Read online</a> -->

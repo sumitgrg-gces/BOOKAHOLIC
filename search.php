@@ -29,11 +29,7 @@ include 'php/connection.php';
     <td><?php echo $Result['author name'];?></td>
    
 
-    <td> <a href="page_detail_s_fiction.php"><?php echo $Result['book name'];?></a></td>
-   <?php
-   
-   $_SESSION['bookname']=$Result['book name'];
-   ?>
+    <td> <a href="page_detail_s_fiction.php?id=<?= $Result['id'] ?>"><?php echo $Result['book name'];?></a></td>
     
   </tr>
   <?php } ?>

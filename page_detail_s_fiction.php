@@ -83,11 +83,9 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
     include 'php/connection.php';
 
-    $name= $_SESSION['bookname'];
-
   
 
-               $selectquery="select * from upload where `book name` ='$name'";
+               $selectquery="select * from upload where `id` = ".$_GET['id'];
                // id in(select max(id) from upload where category='0')";//from select tag we select 'romance'
 
                $query = mysqli_query($connection,$selectquery) or die('couldnt connect');
@@ -113,10 +111,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <br 
     <input type="radio" id="book" checked>
         <label for="book" >Available in Hardcopy</label><br><br><br>
+
+        <?php 
+        
+        
+        
+        print_r($Result) ;
+        
+        ?>
      
      <div> 
                 
-                <a href="search1.php?file=lab.pdf"> free Download</a>
+                <a href="/php/uploads/<?= $Result['pdf'] ?>" download> free Download </a>
                 <?php echo $Result['pdf'];?>
 
                 <!-- <a href="#" class="button">Read online</a> -->

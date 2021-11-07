@@ -531,8 +531,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <div class="popup_close2">+</div>
             <form class="form form_login" action="php/handle.php" method="POST">
 
-                <input type="Text" class="input_login" name="email" placeholder=" Your Email">
-                <input type="Password" class="input_login" name="password" placeholder="Enter password">
+                <input type="Text" class="input input_login" name="email" placeholder=" Your Email">
+                <input type="Password" class="input input_login" name="password" placeholder="Enter password">
                 <input type="Submit" name="login" value="Login">
 
             </form>
@@ -566,16 +566,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                     </div>
-                    <input type="Text" class="input" name="name" placeholder="category">
-                <div class="error">
-                    <?php
-                    if(isset($_SESSION['name_error'])){
-                        echo $_SESSION["name_error"] ;
-
-                    }
-                     
-                     ?>
-                    </div>
+                    
+                    <select id="category" class="input" placeholder="Category">
+                       
+                       <option value="saab">Science Fiction</option>
+                       <option value="fiat">Horror</option>
+                       <option value="audi">Romance</option>
+                       <option value="audi">Fantasy</option>
+                       <option value="audi">mystery</option>
+                       <option value="audi">History</option>
+                       <option value="audi">Students</option>
+                     </select>
+                     <div class="error"></div>
                     <input type="Text" class="input" name="name" placeholder="Description">
                 <div class="error">
                     <?php

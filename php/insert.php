@@ -109,7 +109,8 @@ if (isset($_POST['submit'])) {
 if(isset($_POST['submit'])){
     $n=$_POST['name'];
     $e=$_POST['email'];
-    $password=$_POST['password'];
+    $password=  md5($_POST['password'],TRUE);
+
     $l=$_POST['location'];
 	$p = $_POST['phone'];
 	

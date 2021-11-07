@@ -769,8 +769,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <div class="popup_close2">+</div>
             <form class="form form_login" action="php/handle.php" method="POST">
 
-                <input type="Text" class="input_login" name="email" placeholder=" Your Email">
-                <input type="Password" class="input_login" name="password" placeholder="Enter password">
+                <input type="Text" class="input input_login" name="email" placeholder=" Your Email">
+                <input type="Password" class="input input_login" name="password" placeholder="Enter password">
                 <input type="Submit" name="login" value="Login">
 
             </form>

@@ -5,12 +5,14 @@ require "connection.php";
 $e=$_POST["email"];
 $p=$_POST["password"];
 
-$query="SELECT * FROM `signnn-up` WHERE email='$e' && password='$p' ";
+$query="SELECT * FROM `signnn-up` WHERE email='$e' && password='$p'";
+// echo $query;die();
 
 $handle=mysqli_query($connection,$query);
 
 if(mysqli_num_rows($handle)){
-    $_SESSION['id'] = mysqli_fetch_assoc($handle)['id'] ;
+    // print_r(mysqli_fetch_assoc($handle));die();
+    $_SESSION['id'] = mysqli_fetch_assoc($handle)['ID'] ;
 	header("location: ../index.php");
 
 }else{

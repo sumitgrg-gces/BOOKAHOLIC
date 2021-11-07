@@ -296,7 +296,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
         
             include 'php/connection.php';
  
-               $selectquery= "select *from upload where category='0'";//from select tag we select 'romance'
+               $selectquery= "select * from upload where category='0'";//from select tag we select 'romance'
 
                $query = mysqli_query($connection,$selectquery) or die('couldnt connect');
               
@@ -322,7 +322,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
        <div class="col-1-of-5">
         <?php  $_SESSION['bname']=$Result['book name'];  ?>
                 <figure class="sfb">
-                 <a href="page_detail_s_fiction.php">  <img src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
+                 <a href="page_detail_s_fiction.php?id=<?= $Result['id'] ?>">  <img src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
 
                     <div class="overlay">
                         <div class="overlay_content">BY: </div>

@@ -117,7 +117,7 @@ if(isset($_POST['submit'])){
 	
 
 if($isvalid ){
-    $sql="INSERT INTO `Signnn-up`(name,email,password,location,phone) values('$n','$e' ,'$password','$l','$p')";
+    $sql="INSERT INTO `signnn-up`(name,email,password,location,phone) values('$n','$e' ,'$password','$l','$p')";
     mysqli_query($connection,$sql); 
     header("location: ../index.php ");
 }
@@ -129,6 +129,4 @@ else{
 print_r(mysqli_error_list($connection));
 
 
-}
-/*
-echo '<script>alert(".....")</>";
+ }

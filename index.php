@@ -67,8 +67,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 <span class="heading-primary-main">BOOKAHOLIC</span>
                 <span class="heading-primary-secondary">have a libary at home</span>
             </h1>
-            <form id="search_form" action="#">
-                <input type="text" class="search" placeholder="search books">
+            <form id="search_form" action="search.php" method="POST">
+                <input type="text" class="search" placeholder="search books" name="search">
             </form>
             <!-- <a class="btn btn-search" href="#">search books</a> -->
         </div>
@@ -108,7 +108,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     </div>
                 </div>
 
-
+                <?php if(!$isLoggedIn){?>
                 <div class="col-1-of-2">
                     <div class="features show-on-scroll">
 
@@ -341,6 +341,244 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     </div>
                 </div>
             </div>
+        <?php } ?>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+                 
+    <?php if($isLoggedIn){?>
+                <div class="col-1-of-2">
+                    <div class="features show-on-scroll">
+
+                        <div class="features_text">
+                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">handy for students</h3>
+                            <p>
+                            students can easily find the text books they want on 'student'category section. Instead of carrying a bag full of books, it is easier to carry a mobile device that supports eBooks, this allows students to refer to their notes and course materials anytime they want.
+                             
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="features show-on-scroll">
+
+                        <div class="features_text">
+                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">Buy and sell with one another</h3>
+                            <p>
+                                This web app has an e-commerce platform where users after validated registration can buy & sell books with one another. However, for the ease of the development connection within them will solely depend on email & phone number.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-1-of-2">
+                    <div class="features show-on-scroll">
+
+                        <div class="features_text">
+                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">register and upload </h3>
+                            <p>
+                                Registered users have ability to upload and publish their content for sharing. Unlike, Anyother E-books sites Here users can upload any
+                                ebooks on their disposal after validation with no worries unless its against law.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+        <section class="section-category">
+            <div class="u-center-text u-margin-bottom-medium">
+                <h2 class="heading-secondary">
+                    CATEGORIES
+                </h2>
+
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--1">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        Science Fiction
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life</p>
+                                </div>
+                                <a href="category_science_fiction.php" class="btn btn-search">BOOKS</a>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--2">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        Romance
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">A romance novel or romantic novel is a type of novel and genre fiction which places its primary focus on the relationship and romantic love between two people, and usually has an "emotionally satisfying and optimistic ending."</p>
+                                </div>
+                                <a href="category_romance.php" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--3">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        HORROR
+                                    </span>
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">Horror is a genre of speculative fiction which is intended to frighten, scare, or disgust. Literary historian J. A. Cuddon defined the horror story as "a piece of fiction in prose of variable length... which shocks, or even frightens the reader, or perhaps induces a feeling of repulsion or loathing".</p>
+                                </div>
+                                <a href="#" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--4">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        Fantasy
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">Make-believe is what this genre is all about. Another description is any book that contains unrealistic settings,magic,often set in a medieval universe, or possibly involving supernatural forms as a primary element of the plot or setting</p>
+                                </div>
+                                <a href="#" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--5">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        mystery
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">The mystery fiction genre is literature that focuses on solving a crime or crime-related puzzle. The story usually follows a protagonist, or detective, who tries to solve the crime and reveal the culprit, or villain</p>
+                                </div>
+                                <a href="#" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-1-of-3">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--6">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        History
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">History. Nonfiction history books include any books that lay out the known facts about a particular, time, culture, or event in history.</p>
+                                </div>
+                                <a href="#" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="position: relative;">
+                <div class="col-1-of-3" style="position: absolute; left: 35.2%;">
+                    <div class="card show-on-scroll">
+                        <div class="card_side card_side--front">
+                            <div class="card_picture--7">
+
+                                <h4 class="card_heading">
+                                    <span class="card_heading-span ">
+                                        students
+                                    </span>
+
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="card_side card_side--back card_side--back-1">
+                            <div class="card_cta">
+                                <div class="card_textbox">
+                                    <p class="card_text">eBooks ensure that students are proactively interacting with the learning material. Digital books provide students with a completely enriched learning experience and help them improve their academic performance.</p>
+                                </div>
+                                <a href="#" class="btn btn-search">BOOKS</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+           <?php } ?>
 
         </section>
     </main>
@@ -365,7 +603,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
             </div>
             <div class="col-1-of-3">
                 <figure class="developer show-on-scroll">
-                    <img src="img/sumit.jpeg"" alt=" s" class="developer_img">
+                    <img src="img/sumit.jpeg" alt=" s" class="developer_img">
                     <div class="d_overlay">
                         <div class="overlay_content">NAME: </div>
                         <div class="overlay_content">Sumit Gurung </div>
@@ -377,7 +615,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
             </div>
             <div class="col-1-of-3">
                 <figure class="developer show-on-scroll">
-                    <img src="img/sishir.jpeg"" alt=" s" class="developer_img">
+                    <img src="img/sishir.jpeg" alt=" s" class="developer_img">
                     <div class="d_overlay">
                         <div class="overlay_content">NAME: </div>
                         <div class="overlay_content">Sishir Chhetri </div>
@@ -545,8 +783,9 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <img class="avatar" src="avatar.png">
             <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
             <div class="popup_close3">+</div>
-            <form class="form form_signup" action="php/insert.php" method="POST">
-                <input type="Text" class="input" name="name" placeholder=" Book Name">
+            
+            <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
+                <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -556,7 +795,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                     </div>
-                    <input type="Text" class="input" name="name" placeholder="Author Name">
+                    <input type="Text" class="input" name="aname" placeholder="Author Name">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -566,7 +805,17 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                     </div>
-                    <input type="Text" class="input" name="name" placeholder="category">
+                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                    <select class="input" name="cname" placevalue="category">
+                           <option value="0">Science Fiction</option>
+                            <option value="1">Romance</option>
+                            <option value="2">Horror</option>
+                            <option value="3">Fantasy</option>
+                            <option value="4">Mystery</option>
+                            <option value="5">History</option>
+                            <option value="5">Student</option>
+
+                        </select>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -576,7 +825,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                     </div>
-                    <input type="Text" class="input" name="name" placeholder="Description">
+                    <input type="Text" class="input" name="dname" placeholder="Description">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -587,27 +836,131 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      ?>
                     </div>
 
-                    <input type="Submit" name="submit" value="Attach File">
-                    <input type="Submit" name="submit" value="Upload Image">
+                    <input type="file" class="input" name="pdf" placeholder="Pdfs">
+
+                    <!-- <label for="files" class="input">Select Book's pdf</label>
+                    <input id="files" style="visibility:hidden;" type="file"> -->
+
+                    <input type="file" class="input" name="image" placeholder="images">
 
 
-                    <input type="Submit" name="submit" value="UPLOAD">
+                    <input type="Submit" name="upload" value="UPLOAD">
 
                 
 
             </form>
+            <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+                        
+                    }
+                     
+                     ?>
+                    </div>
         </div>
     </div>
 
 
 
-
-    <script src="javascript/script.js"></script>
-    <script src="javascript/show-on-scroll.js"></script>
+    
     <script type="text/javascript" src="particles.js"></script>
 
     <script type="text/javascript" src="app.js"></script>
+    <script src="javascript/script.js"></script>
+<script src="javascript/show-on-scroll.js"></script>
 
 </body>
 
 </html>
+
+<?php
+include 'php/connection.php';
+// 
+if(isset($_POST['upload'])){
+       
+       $errorer= array();
+      $book_name = $_POST['bname'];
+
+      $author_name = $_POST['aname'];
+      $category = $_POST['cname'];
+      $description = $_POST['dname'];
+
+      $filepdf= $_FILES['pdf']['name'];
+
+      $fileimage = $_FILES['image']['name'];
+
+
+
+
+
+      
+      $file_size1 =$_FILES['image']['size'];
+      $file_tmp1 =$_FILES['image']['tmp_name'];
+      $file_type1=$_FILES['image']['type'];
+      $file_size2 =$_FILES['pdf']['size'];
+      $file_tmp2 =$_FILES['pdf']['tmp_name'];
+      $file_type2=$_FILES['pdf']['type'];
+
+      $file_explode1=explode('.',$fileimage);
+      
+
+      $file_explode2=explode('.',$filepdf); 
+
+      $file_ext1=strtolower(end($file_explode1));
+      
+      $file_ext2=strtolower(end($file_explode2));
+
+      
+      $expensions1= array("jpeg","jpg","png");
+      $expensions2= array("pdf");
+
+      
+      if(in_array($file_ext1,$expensions1)=== false){
+         $errorer[]="extension not allowed, please choose a JPEG or PNG file.";
+      }
+      if(in_array($file_ext2,$expensions2)=== false){
+         $errorer[]="invalid format! only pdf";
+      }
+      
+      if($file_size1 && $file_size2> 2097152000){
+         $errorer[]='File size bigger';
+      }
+      
+      if(empty($errorer)==true){
+
+        $sql = "INSERT INTO upload (`book name`,`author name`, category, description, pdf, image)
+         values('$book_name','$author_name','$category','$description','$filepdf','$fileimage')";
+
+        $result = mysqli_query($connection,$sql);
+        if ($result) {
+            
+        move_uploaded_file($file_tmp1,"php/uploads/".$fileimage);
+          move_uploaded_file($file_tmp2,"php/uploads/".$filepdf);
+          
+             echo "<script>alert('uploaded!')</script>";
+                
+             } 
+         
+
+             else{
+                echo "<script>alert('sorry!')</script>";
+
+                 }
+
+         //echo "Success";
+      
+        //    }  
+     //    if (mysqli_query($connection, $sql)) {
+     //    echo "New record created successfully !";
+     // } else {
+     //    echo "Error: " . $sql . "" . mysqli_error($connection);
+     // }
+     
+  
+          
+          }  else{
+         print_r($errorer);
+      }
+  }
+?>

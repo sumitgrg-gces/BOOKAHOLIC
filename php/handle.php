@@ -10,7 +10,7 @@ $query="SELECT * FROM `signnn-up` WHERE email='$e' && password='$p' ";
 $handle=mysqli_query($connection,$query);
 
 if(mysqli_num_rows($handle)){
-    $_SESSION['id'] = mysqli_fetch_assoc($handle)['ID'] ;
+    $_SESSION['id'] = mysqli_fetch_assoc($handle)['id'] ;
 	header("location: ../index.php");
 
 }else{

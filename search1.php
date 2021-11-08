@@ -25,13 +25,14 @@
         <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
-    <section class="sciencefiction" style="height:100%;"> 
+    <section class="sciencefiction" style="height:81.5%;"> 
         <div id="particles-js"></div>
           <nav class="navigation_bar">
         <div class="navigation_icon">
             <div class="line line-1"></div>
             <div class="line line-2"></div>
             <div class="line line-3"></div>
+
 
 
         </div>
@@ -66,7 +67,7 @@
              $searching= $_POST['search'];
 			 ?>
 			 <div class="u-center-text u-margin-bottom-small">
-			 <span class="heading-tertiary">you searched: </span><span><?php
+			 <span class="heading-tertiary">you searched:&nbsp </span><span><?php
 
 echo $searching;
 ?></span>
@@ -145,6 +146,33 @@ echo '</div><div class="row">';
 ?>
 
 <?php }?>
+</section>
+
+<footer class="footer">
+        
+
+        <div class="footer_navigation">
+            <ul class="footer_list">
+                <li class="footer_item"><a class="footer_link" href="#">about us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">terms</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">contact us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">FAQ</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">report bug</a></li>
+
+
+
+            </ul>
+        </div>
+
+        <div class="footer_copyright">Copyright © 2020 by Team Bookaholic
+            All rights reserved. This site or any portion thereof
+            may not be reproduced or used in any manner whatsoever
+            without the express written permission of the publisher
+            except for the use of brief quotations.</div>
+
+
+    </footer>
+
     
     
 
@@ -230,6 +258,9 @@ echo '</div><div class="row">';
                     </div>
         </div>
     </div>
+				
+	
+
 
 
 
@@ -342,15 +373,7 @@ if(isset($_POST['upload'])){
 </div>
 <?php } ?>
 
-<script type="text/javascript" src="particles.js"></script>
 
-<script type="text/javascript" src="app.js"></script>
-<script src="javascript/script.js"></script>
-<script src="javascript/show-on-scroll.js"></script>
-
-
-		</body>
-		</html>
 
 
 

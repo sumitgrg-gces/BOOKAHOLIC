@@ -12,7 +12,7 @@ $handle=mysqli_query($connection,$query);
 
 if(mysqli_num_rows($handle)){
     // print_r(mysqli_fetch_assoc($handle));die();
-    $_SESSION['id'] = mysqli_fetch_assoc($handle)['id'] ;
+    $_SESSION['id'] = mysqli_fetch_assoc($handle)['ID'] ;
 	header("location: ../index.php");
 
 }else{

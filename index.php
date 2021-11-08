@@ -127,7 +127,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     <div class="features show-on-scroll">
 
                         <div class="features_text">
-                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">Buy and sell with one another</h3>
+                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">User Friendly</h3>
                             <p>
                                 This web app has an e-commerce platform where users after validated registration can buy & sell books with one another. However, for the ease of the development connection within them will solely depend on email & phone number.
 
@@ -135,6 +135,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                         </div>
                     </div>
                 </div>
+
 
                 <div class="col-1-of-2">
                     <div class="features show-on-scroll">
@@ -340,7 +341,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                                 <div class="card_textbox">
                                     <p class="card_text">eBooks ensure that students are proactively interacting with the learning material. Digital books provide students with a completely enriched learning experience and help them improve their academic performance.</p>
                                 </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
+                                <a href="category_student.php" class="btn btn-search">BOOKS</a>
                             </div>
 
                         </div>

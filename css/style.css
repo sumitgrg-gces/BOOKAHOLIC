@@ -132,7 +132,7 @@ html {
 
 .footer {
   background-color: #333;
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
   .footer_navigation {
@@ -233,6 +233,10 @@ html {
   border-radius: 100px;
   transition: all .2s;
   position: relative; }
+
+.btn_ipage {
+  background-image: linear-gradient(to left, rgba(75, 193, 165, 0.8), rgba(45, 61, 176, 0.75));
+  color: white; }
 
 .btn:hover {
   transform: translateY(-3px);

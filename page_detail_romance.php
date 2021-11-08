@@ -99,29 +99,30 @@ $isLoggedIn = isset($_SESSION['id']) ;
    <!--  <div class="book-view">
         
   </div> -->
-         <div class="row">
+  <div class="row">
 
-                <div class="col-1-of-2">
-                <div class="main">
-                      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="180" height="180">
+<div class="col-1-of-2">
+<div class="main">
+      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="200" height="200">
 
-                      <br/>
-                       <br/>
-                     <h1><?php echo $Result['book name'];?></h1>
-                     <h5>By: <?php echo $Result['author name'];?></h5>
-              </div>
-                </div>
-                <div class="col-1-of-2"> 
-                <div class="desc"> 
-                    <label>Description:</label><br/>
+      <br/>
+      <div class="heading-tertiary" style = "color=red;">
+       
+     <h1><?php echo $Result['book name'];?></h1>
+     <h5>By: <?php echo $Result['author name'];?></h5></div>
+</div>
+</div>
+<div class="col-1-of-2"> 
+<div class="desc"> 
+   <div class="heading-tertiary"style = "margin:2px;" > <h3><label>Description:</label></h3></div>
 
-               <span><?php echo $Result['description'];?></span>
-              </div>
-              </div>
-     
+<span><?php echo $Result['description'];?></span>
+</div>
+</div>
 
-             
-        </div>
+
+
+</div>
 
 
   
@@ -129,20 +130,48 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <br> 
     <br>
     <div class="row">
-        <div class="col-1-of-2">
-        <div class="u-center-text u-margin-bottom-small">
-        <a href="php/uploads/<?= $Result['pdf'] ?>" class="button"> free Download</a>
-              </div>
+<div class="col-1-of-2">
+<div class="u-center-text u-margin-bottom-small">
+<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" download > free Download</a>
+</div>
 
+</div>
+<div class="col-1-of-2">
+<div class="u-center-text u-margin-bottom-small">
+<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" target="_blank">Read online</a>
+</div>
+
+</div>
+
+</div>
+              </section>
+
+
+
+<footer class="footer">
+        
+
+        <div class="footer_navigation">
+            <ul class="footer_list">
+                <li class="footer_item"><a class="footer_link" href="#">about us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">terms</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">contact us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">FAQ</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">report bug</a></li>
+
+
+
+            </ul>
         </div>
-        <div class="col-1-of-2">
-        <div class="u-center-text u-margin-bottom-small">
-        <a href="php/uploads/<?= $Result['pdf'] ?>" class="button" target="_blank">Read online</a>
-              </div>
 
-        </div>
+        <div class="footer_copyright">Copyright © 2020 by Team Bookaholic
+            All rights reserved. This site or any portion thereof
+            may not be reproduced or used in any manner whatsoever
+            without the express written permission of the publisher
+            except for the use of brief quotations.</div>
 
-    </div>
+
+    </footer>
     
                  
                 

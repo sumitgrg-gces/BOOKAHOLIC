@@ -15,18 +15,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
     <link rel="stylesheet" href="css/style.css">
     <style type="text/css">
-      .button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+     
 .desc{
   margin-top: 10px;
   padding: 10px;
@@ -93,22 +82,22 @@ $isLoggedIn = isset($_SESSION['id']) ;
               if( $Result = mysqli_fetch_array($query)) {
 
                 ?>
-
 <div class="row">
 
 <div class="col-1-of-2">
 <div class="main">
-      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="180" height="180">
+      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="200" height="200">
 
       <br/>
-       <br/>
+      <div class="heading-tertiary" style = "color=red;">
+       
      <h1><?php echo $Result['book name'];?></h1>
-     <h5>By: <?php echo $Result['author name'];?></h5>
+     <h5>By: <?php echo $Result['author name'];?></h5></div>
 </div>
 </div>
 <div class="col-1-of-2"> 
 <div class="desc"> 
-    <label>Description:</label><br/>
+   <div class="heading-tertiary"style = "margin:2px;" > <h3><label>Description:</label></h3></div>
 
 <span><?php echo $Result['description'];?></span>
 </div>
@@ -126,18 +115,49 @@ $isLoggedIn = isset($_SESSION['id']) ;
 <div class="row">
 <div class="col-1-of-2">
 <div class="u-center-text u-margin-bottom-small">
-<a href="php/uploads/<?= $Result['pdf'] ?>" class="button"> free Download</a>
+<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" download > free Download</a>
 </div>
 
 </div>
 <div class="col-1-of-2">
 <div class="u-center-text u-margin-bottom-small">
-<a href="php/uploads/<?= $Result['pdf'] ?>" class="button" target="_blank">Read online</a>
+<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" target="_blank">Read online</a>
 </div>
 
 </div>
 
 </div>
+              </section>
+
+
+
+<footer class="footer">
+        
+
+        <div class="footer_navigation">
+            <ul class="footer_list">
+                <li class="footer_item"><a class="footer_link" href="#">about us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">terms</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">contact us</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">FAQ</a></li>
+                <li class="footer_item"><a class="footer_link" href="#">report bug</a></li>
+
+
+
+            </ul>
+        </div>
+
+        <div class="footer_copyright">Copyright © 2020 by Team Bookaholic
+            All rights reserved. This site or any portion thereof
+            may not be reproduced or used in any manner whatsoever
+            without the express written permission of the publisher
+            except for the use of brief quotations.</div>
+
+
+    </footer>
+
+
+
     
 
 

@@ -107,18 +107,15 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <br/>
     <br/>
     <h1><?php echo $Result['book name'];?></h1>
-    <h5>by <?php echo $Result['author name'];?></h5>
-    <br 
-    <input type="radio" id="book" checked>
-        <label for="book" >Available in Hardcopy</label><br><br><br>
+    <h5>By <?php echo $Result['author name'];?></h5>
+    <br>
+    <br><br>
      
      <div> 
 
                 
                 <a href="php/uploads/<?= $Result['pdf'] ?>" download> free Download </a>
                 <?php echo $Result['pdf'];?>
-
-                <!-- <a href="#" class="button">Read online</a> -->
         
 </div> 
 
@@ -132,7 +129,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
   </div>
 </div>
 
-<?php }?>
+<?php }?> 
+
 <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
@@ -219,7 +217,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
     
-    <script type="text/javascript" src="particles.js"></script>
+    <!-- <script type="text/javascript" src="particles.js"></script> -->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>

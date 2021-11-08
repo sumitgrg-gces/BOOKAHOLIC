@@ -35,5 +35,8 @@
     .col-1-of-5{
         width: calc((100% - 4 * #{$gutter-horizontal}) / 5);
     }
+    .col-1-of-1{
+        margin: 0 auto;
+    }
 
 }

@@ -126,6 +126,8 @@ html {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-1-of-5 {
     width: calc((100% - 4 * 6rem) / 5); }
+  .row .col-1-of-1 {
+    margin: 0 auto; }
 
 .footer {
   background-color: #333;

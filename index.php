@@ -108,7 +108,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     </div>
                 </div>
 
-                <?php if(!$isLoggedIn){?>
+                
                 <div class="col-1-of-2">
                     <div class="features show-on-scroll">
 
@@ -153,242 +153,13 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
         </section>
-        <section class="section-category">
-            <div class="u-center-text u-margin-bottom-medium">
-                <h2 class="heading-secondary">
-                    CATEGORIES
-                </h2>
-
-            </div>
-            <div class="row">
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--1">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        Science Fiction
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">Science fiction (sometimes shortened to sci-fi or SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life</p>
-                                </div>
-                                <a href="category-science_fiction/category-science_fiction.html" class="btn btn-search">BOOKS</a>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--2">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        Romance
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">A romance novel or romantic novel is a type of novel and genre fiction which places its primary focus on the relationship and romantic love between two people, and usually has an "emotionally satisfying and optimistic ending."</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--3">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        HORROR
-                                    </span>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">Horror is a genre of speculative fiction which is intended to frighten, scare, or disgust. Literary historian J. A. Cuddon defined the horror story as "a piece of fiction in prose of variable length... which shocks, or even frightens the reader, or perhaps induces a feeling of repulsion or loathing".</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--4">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        Fantasy
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">Make-believe is what this genre is all about. Another description is any book that contains unrealistic settings,magic,often set in a medieval universe, or possibly involving supernatural forms as a primary element of the plot or setting</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--5">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        mystery
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">The mystery fiction genre is literature that focuses on solving a crime or crime-related puzzle. The story usually follows a protagonist, or detective, who tries to solve the crime and reveal the culprit, or villain</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-1-of-3">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--6">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        History
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">History. Nonfiction history books include any books that lay out the known facts about a particular, time, culture, or event in history.</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="position: relative;">
-                <div class="col-1-of-3" style="position: absolute; left: 35.2%;">
-                    <div class="card show-on-scroll">
-                        <div class="card_side card_side--front">
-                            <div class="card_picture--7">
-
-                                <h4 class="card_heading">
-                                    <span class="card_heading-span ">
-                                        students
-                                    </span>
-
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="card_side card_side--back card_side--back-1">
-                            <div class="card_cta">
-                                <div class="card_textbox">
-                                    <p class="card_text">eBooks ensure that students are proactively interacting with the learning material. Digital books provide students with a completely enriched learning experience and help them improve their academic performance.</p>
-                                </div>
-                                <a href="#" class="btn btn-search">BOOKS</a>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        <?php } ?>
+       
+            
+        
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////// -->
                  
-    <?php if($isLoggedIn){?>
-                <div class="col-1-of-2">
-                    <div class="features show-on-scroll">
+    
 
-                        <div class="features_text">
-                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">handy for students</h3>
-                            <p>
-                            students can easily find the text books they want on 'student'category section. Instead of carrying a bag full of books, it is easier to carry a mobile device that supports eBooks, this allows students to refer to their notes and course materials anytime they want.
-                             
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2">
-                    <div class="features show-on-scroll">
-
-                        <div class="features_text">
-                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">Buy and sell with one another</h3>
-                            <p>
-                                This web app has an e-commerce platform where users after validated registration can buy & sell books with one another. However, for the ease of the development connection within them will solely depend on email & phone number.
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-1-of-2">
-                    <div class="features show-on-scroll">
-
-                        <div class="features_text">
-                            <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">register and upload </h3>
-                            <p>
-                                Registered users have ability to upload and publish their content for sharing. Unlike, Anyother E-books sites Here users can upload any
-                                ebooks on their disposal after validation with no worries unless its against law.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </section>
         <section class="section-category">
             <div class="u-center-text u-margin-bottom-medium">
                 <h2 class="heading-secondary">
@@ -578,7 +349,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 </div>
             </div>
 
-           <?php } ?>
+           
 
         </section>
     </main>

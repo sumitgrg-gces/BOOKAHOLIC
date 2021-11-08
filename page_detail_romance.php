@@ -108,13 +108,12 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <br/>
     <br/>
     <h1><?php echo $Result['book name'];?></h1>
-    <h5>by <?php echo $Result['author name'];?></h5>
-    <br 
-    <input type="radio" id="book" checked>
-        <label for="book" >Available in Hardcopy</label><br><br><br>
+    <h5>By: <?php echo $Result['author name'];?></h5>
+    <br> 
+    <br>
      
      <div> 
-                 <a href="" class="button"> free Download</a>
+                 <a href="" class="button"> Free Download</a>
                 <a href="#" class="button">Read online</a>
         
 </div> 

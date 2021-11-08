@@ -81,16 +81,15 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <?php
     include 'php/connection.php';
                
-               $bookname= $_SESSION['id'];
-                echo $bookname;
-               $selectquery= "select * from upload where category = 0 ";
+              
+               $selectquery= "select * from upload where id =".$_GET['id'] ;
                // where `book name` = '$name'";
                // id in(select max(id) from upload where category='0')";//from select tag we select 'romance'
 
                $query = mysqli_query($connection,$selectquery) or die('couldnt connect');
 
               while( $Result = mysqli_fetch_array($query)) {
-                if($Result['book name']==$bookname){
+              
                 
 
                 ?>
@@ -114,8 +113,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
         <label for="book" >Available in Hardcopy</label><br><br><br>
      
      <div> 
-                 <a href="" class="button"> free Download</a>
-                <a href="#" class="button">Read online</a>
+                 <a href="php/uploads/<?= $Result['pdf'] ?>" class="button"> free Download</a>
+                <a href="php/uploads/<?= $Result['pdf'] ?>" class="button" target="_blank">Read online</a>
         
 </div> 
 
@@ -128,7 +127,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
     
   </div>
 </div>
-<?php } }?>
+<?php  }?>
 <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
@@ -215,7 +214,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
     
-    <script type="text/javascript" src="particles.js"></script>
+    <!-- <script type="text/javascript" src="particles.js"></script> -->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>

@@ -67,7 +67,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 <span class="heading-primary-main">BOOKAHOLIC</span>
                 <span class="heading-primary-secondary">have a libary at home</span>
             </h1>
-            <form id="search_form" action="search.php" method="POST">
+            <form id="search_form" action="search1.php" method="POST">
                 <input type="text" class="search" placeholder="search books" name="search">
             </form>
             <!-- <a class="btn btn-search" href="#">search books</a> -->

@@ -313,7 +313,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <?php 
             $col=0;
            while ( $Result = mysqli_fetch_array($query)) {
-              $_SESSION['id']=$Result['id'];
+            
             
            
             ?>  
@@ -321,7 +321,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
       
        <div class="col-1-of-5">
                 <figure class="sfb">
-                  <a href="page_detail_romance.php"> <img src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
+                  <a href="page_detail_romance.php?id=<?= $Result['id'] ?>"> <img src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
 
                     <div class="overlay">
                         <div class="overlay_content">BY: </div>

@@ -1,18 +1,20 @@
 <?php 
 session_start();
+
 include 'php/connection.php'; 
 ?>
+
 <form method="post" action="#">
 
   <input type="search" name="search" placeholder="Search book's" class="search">
   <input type="Submit" name="ssubmit" value="Search">
 </form>
 
- <?php
+ <!-- <?php
           
          if(isset($_POST['search'])){
                $searching= $_POST['search'];
-               echo $searching;
+               
               $searching= preg_replace("#[^0-9a-z]#i","",$searching);
               $sql = "select * from upload where `book name` like '%$searching%'";
               $query =mysqli_query($connection,$sql);
@@ -36,4 +38,6 @@ include 'php/connection.php';
   
 </table>
 
-<?php }?>
+<?php }
+}
+?>

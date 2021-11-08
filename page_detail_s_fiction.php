@@ -115,8 +115,9 @@ $isLoggedIn = isset($_SESSION['id']) ;
      <div> 
 
                 
-                <a href="php/uploads/<?= $Result['pdf'] ?>" download> free Download </a>
-                <?php echo $Result['pdf'];?>
+                <a href="php/uploads/<?= $Result['pdf'] ?>" class="button"> Free Download </a>
+                <a href="php/uploads/<?= $Result['pdf'] ?>" class="button" target="_blank"> Read Online </a>
+                
 
                 <!-- <a href="#" class="button">Read online</a> -->
         
@@ -219,7 +220,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
     
-    <script type="text/javascript" src="particles.js"></script>
+    <!-- <script type="text/javascript" src="particles.js"></script> -->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>

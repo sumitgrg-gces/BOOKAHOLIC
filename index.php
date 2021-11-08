@@ -67,7 +67,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 <span class="heading-primary-main">BOOKAHOLIC</span>
                 <span class="heading-primary-secondary">have a libary at home</span>
             </h1>
-            <form id="search_form" action="search.php" method="POST">
+            <form id="search_form" action="search1.php" method="POST">
                 <input type="text" class="search" placeholder="search books" name="search">
             </form>
             <!-- <a class="btn btn-search" href="#">search books</a> -->
@@ -608,11 +608,29 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     </div>
 
                     <input type="file" class="input" name="pdf" placeholder="Pdfs">
+                    <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
 
                     <!-- <label for="files" class="input">Select Book's pdf</label>
                     <input id="files" style="visibility:hidden;" type="file"> -->
 
-                    <input type="file" class="input" name="image" placeholder="images">
+                    <input type="file" class="input" name="image" placeholder="images" >
+                    <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
 
 
                     <input type="Submit" name="upload" value="UPLOAD">

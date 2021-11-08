@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
       
 //String Validation  
     if (empty($_POST["name"])) {  
-        $_SESSION["name_error"] = "Name is required"; 
+        $_SESSION["name_error"] = "Field Empty"; 
          $isvalid=false; 
          
     } else {  

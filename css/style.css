@@ -71,7 +71,8 @@ html {
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #2c6a94; }
 
 .header {
   height: 95vh;

@@ -45,7 +45,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
         <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
-    <section class="sciencefiction">
+    <section class="sciencefiction" style="height=100%;">
         <div id="particles-js"></div>
   <nav class="navigation_bar">
         <div class="navigation_icon">
@@ -81,53 +81,74 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <?php
     include 'php/connection.php';
                
-               $bookname= $_SESSION['id'];
-                echo $bookname;
-               $selectquery= "select * from upload where category = 0 ";
+              
+               $selectquery= "select * from upload where id =".$_GET['id'] ;
                // where `book name` = '$name'";
                // id in(select max(id) from upload where category='0')";//from select tag we select 'romance'
 
                $query = mysqli_query($connection,$selectquery) or die('couldnt connect');
 
               while( $Result = mysqli_fetch_array($query)) {
-                if($Result['book name']==$bookname){
+              
                 
 
                 ?>
     
 
-<div class="row">
-  <div class="side">
+
    <!--  <div class="book-view">
         
   </div> -->
-  
-  <div class="main">
-    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="180" height="180">
+         <div class="row">
 
-    <br/>
-    <br/>
-    <h1><?php echo $Result['book name'];?></h1>
-    <h5>By: <?php echo $Result['author name'];?></h5>
+                <div class="col-1-of-2">
+                <div class="main">
+                      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="180" height="180">
+
+                      <br/>
+                       <br/>
+                     <h1><?php echo $Result['book name'];?></h1>
+                     <h5>By: <?php echo $Result['author name'];?></h5>
+              </div>
+                </div>
+                <div class="col-1-of-2"> 
+                <div class="desc"> 
+                    <label>Description:</label><br/>
+
+               <span><?php echo $Result['description'];?></span>
+              </div>
+              </div>
+     
+
+             
+        </div>
+
+
+  
+  
     <br> 
     <br>
-     
-     <div> 
-                 <a href="" class="button"> Free Download</a>
-                <a href="#" class="button">Read online</a>
-        
-</div> 
+    <div class="row">
+        <div class="col-1-of-2">
+        <div class="u-center-text u-margin-bottom-small">
+        <a href="php/uploads/<?= $Result['pdf'] ?>" class="button"> free Download</a>
+              </div>
 
-      <div class="desc"> 
-        <label>Description:</label><br/>
+        </div>
+        <div class="col-1-of-2">
+        <div class="u-center-text u-margin-bottom-small">
+        <a href="php/uploads/<?= $Result['pdf'] ?>" class="button" target="_blank">Read online</a>
+              </div>
 
-     <span><?php echo $Result['description'];?></span>
+        </div>
 
-
+    </div>
     
-  </div>
-</div>
-<?php } }?>
+                 
+                
+        
+
+<?php  }?>
 <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
@@ -214,7 +235,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
     
-    <script type="text/javascript" src="particles.js"></script>
+    <!-- <script type="text/javascript" src="particles.js"></script> -->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>

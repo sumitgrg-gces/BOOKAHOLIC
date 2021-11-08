@@ -17,13 +17,13 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <?php if($isLoggedIn){?>
+    
     <div class="header_logo-box">
         <a href="index.php">
         <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
-<?php }?>
+
     <section class="sciencefiction">
         <div id="particles-js"></div>
         

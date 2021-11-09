@@ -61,6 +61,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 
                 <?php if($isLoggedIn) { ?>
                     <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
+                    <li class="navigation_item"><a href="#" class="navigation_link" id="popup-update">Update/Edit</a></li>
                 
                 <li class="navigation_item"><a href="php/logout.php" class="navigation_link" id="popup-logout">log-out</a></li>
             <?php } ?>
@@ -92,7 +93,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
       <div class="heading-tertiary" style = "color=red;">
        
      <h1><?php echo $Result['book name'];?></h1>
-     <h5>By: <?php echo $Result['author name'];?></h5></div>
+     <h5>By: <?php echo $Result['author name'];?></h5>
+     <h5>BOOK ID:&nbsp<?php echo $Result['id'];?> </h5>
+     <h5>CATEGORY:&nbsp<?php echo $Result['category'];?> </h5>
+    </div>
 </div>
 </div>
 <div class="col-1-of-2"> 
@@ -164,7 +168,138 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 <?php }?> 
 
-<div class="popup_bg3">
+<!-- POPUPS -->
+
+<div class="popup_bg1">
+        <div class="popup_content popup_content_signup">
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up</h2>
+            <div class="popup_close1">+</div>
+            <form class="form form_signup" action="php/insert.php" method="POST">
+                <input type="Text" class="input" name="name" placeholder=" Your Name">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+
+                <input type="Text" class="input" name="email" placeholder=" Your Email">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['email_error'])){
+                    echo $_SESSION["email_error"] ;
+                    }
+                     ?>
+                    </div>
+
+                <input type="Password" class="input" name="password" placeholder="Enter password">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['password_error'])){
+                    echo $_SESSION['password_error'] ; 
+                    } ?>
+                    </div>
+
+                <input type="Password" class="input" name="cpassword" placeholder="confirm password">
+                <div class="error">
+                    <?php
+                     if(isset($_SESSION['capassword_error'])){
+                    echo $_SESSION['cpassword_error'] ; 
+                      } ?>
+                    </div>
+
+                <input type="Text" class="input" name="location" placeholder=" Your location" required>
+                <div class="error"></div>
+                
+                <input type="number" class="input" name="phone" placeholder=" Your phone number">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['phone_error'])){
+                    echo $_SESSION['phone_error'] ; 
+                    } ?>
+                    </div>
+                <hr class="h-line">
+
+                <p><span><input type="checkbox" name="agree">&nbsp I agree to the terms of services</span></p>
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['agree_error'])){
+                    echo $_SESSION['agree_error'] ;  
+                    }?>
+                    </div>
+
+                <input type="Submit" name="submit" value="sign-up">
+
+                <?php 
+                
+                // document.getElementById("popup-signup").dispatchEvent( new Event("click"))
+                $hasError = false ;
+
+
+                $errKeys = [
+                    'agree_error',
+'name_error',
+'email_error',
+'password_error',
+'cpassword_error',
+'phone_error'
+                ];
+
+                foreach($errKeys as $ekey){
+                    if(!empty($_SESSION[$ekey])){
+                        $hasError = true ;
+                    }
+                }
+
+                if($hasError){
+                    echo "<script> 
+                    window.addEventListener('load', function(){
+                    document.getElementById('popup-signup').dispatchEvent( new Event('click'));}) ;
+                    </script>" ;
+                }
+                
+                ?>
+               
+                <?php 
+                
+                unset($_SESSION['agree_error']) ;
+                unset($_SESSION['name_error']) ;
+                unset($_SESSION['email_error']) ;
+                unset($_SESSION['password_error']) ;
+                unset($_SESSION['cpassword_error']) ;
+                unset($_SESSION['phone_error']) ;
+
+                
+                ?>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="popup_bg2">
+        <div class="popup_content popup_content_login">
+
+
+
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN</h2>
+            <div class="popup_close2">+</div>
+            <form class="form form_login" action="php/handle.php" method="POST">
+
+                <input type="Text" class="input input_login" name="email" placeholder=" Your Email">
+                <input type="Password" class="input input_login" name="password" placeholder="Enter password">
+                <input type="Submit" name="login" value="Login">
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
             <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
@@ -223,11 +358,29 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     </div>
 
                     <input type="file" class="input" name="pdf" placeholder="Pdfs">
+                    <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
 
                     <!-- <label for="files" class="input">Select Book's pdf</label>
                     <input id="files" style="visibility:hidden;" type="file"> -->
 
-                    <input type="file" class="input" name="image" placeholder="images">
+                    <input type="file" class="input" name="image" placeholder="images" >
+                    <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
 
 
                     <input type="Submit" name="upload" value="UPLOAD">
@@ -235,17 +388,90 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 
 
             </form>
-            <div class="error">
+            
+        </div>
+    </div>
+
+    <div class="popup_bg4">
+        <div class="popup_content popup_content_upload">
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Update</h2>
+            <div class="popup_close4">+</div>
+            
+            <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
+            <input type="number" class="input" name="bname" placeholder=" Book ID" required>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
-                        
+
                     }
                      
                      ?>
                     </div>
+                <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <input type="Text" class="input" name="aname" placeholder="Author Name">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                    <select class="input" name="cname" placevalue="category">
+                           <option value="0">Science Fiction</option>
+                            <option value="1">Romance</option>
+                            <option value="2">Horror</option>
+                            <option value="3">Fantasy</option>
+                            <option value="4">Mystery</option>
+                            <option value="5">History</option>
+                            <option value="5">Student</option>
+
+                        </select>
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+                    <input type="Text" class="input" name="dname" placeholder="Description">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                    </div>
+
+                    
+
+
+                    <input type="Submit" name="upload" value="UPDATE/EDIT">
+
+                
+
+            </form>
+            
         </div>
     </div>
+
 
 
 

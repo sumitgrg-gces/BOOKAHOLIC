@@ -1,6 +1,7 @@
 .popup{
     &_bg1,
     &_bg3,
+    &_bg4,
     &_bg2{
         width: 100%;
         height: 100%;
@@ -43,6 +44,7 @@
     }
     &_close1 ,
     &_close3,
+    &_close4,
     &_close2{
 
         position: absolute;

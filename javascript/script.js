@@ -57,8 +57,9 @@ catch(e){
 
 }
 
-//1,upload
-document.getElementById('popup-upload').addEventListener('click',
+//upload
+try{
+    document.getElementById('popup-upload').addEventListener('click',
 function(){
     document.querySelector('.popup_bg3').style.display = 'flex';
 });
@@ -68,3 +69,27 @@ document.querySelector('.popup_close3').addEventListener('click',
 function(){
     document.querySelector('.popup_bg3').style.display = 'none';
 });
+
+}
+catch(e){
+
+}
+
+//update
+try{
+    document.getElementById('popup-update').addEventListener('click',
+function(){
+    document.querySelector('.popup_bg4').style.display = 'flex';
+});
+
+
+document.querySelector('.popup_close4').addEventListener('click',
+function(){
+    document.querySelector('.popup_bg4').style.display = 'none';
+});
+
+}
+catch(e){
+    
+}
+

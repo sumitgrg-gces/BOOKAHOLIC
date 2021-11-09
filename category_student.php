@@ -8,7 +8,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Category-science_fiction</title>
+    <title>Category-student</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
@@ -29,7 +29,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
         
         <div class="sfh u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
-                science fiction
+                student
             </h2>
         </div>
     <nav class="navigation_bar">

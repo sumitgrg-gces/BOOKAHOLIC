@@ -47,6 +47,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 <?php if($isLoggedIn) { ?>
                     <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
                     
+                    
                 
                 <li class="navigation_item"><a href="php/logout.php" class="navigation_link" id="popup-logout">log-out</a></li>
             <?php } ?>
@@ -554,9 +555,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload
+            </h2>
             <div class="popup_close3">+</div>
-            
+
             <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
                 <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
                 <div class="error">
@@ -567,8 +569,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="aname" placeholder="Author Name">
+                </div>
+                <input type="Text" class="input" name="aname" placeholder="Author Name">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -577,18 +579,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
-                    <select class="input" name="cname" placevalue="category">
-                           <option value="0">Science Fiction</option>
-                            <option value="1">Romance</option>
-                            <option value="2">Horror</option>
-                            <option value="3">Fantasy</option>
-                            <option value="4">Mystery</option>
-                            <option value="5">History</option>
-                            <option value="5">Student</option>
+                </div>
+                <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                <select class="input" name="cname" placevalue="category" style="color:#6d6262;">
+                    <option value="0">Science Fiction</option>
+                    <option value="1">Romance</option>
+                    <option value="2">Horror</option>
+                    <option value="3">Fantasy</option>
+                    <option value="4">Mystery</option>
+                    <option value="5">History</option>
+                    <option value="5">Student</option>
 
-                        </select>
+                </select>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -597,8 +599,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="dname" placeholder="Description">
+                </div>
+                <!-- <input type="Text" class="input" name="dname" placeholder="Description"> -->
+
+                <textarea name="dname" id="" cols="1" rows="2.5" class="input" placeholder="Description"></textarea>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -607,10 +611,12 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
-                    <input type="file" class="input" name="pdf" placeholder="Pdfs">
-                    <div class="error">
+                <input type="file" class="input" name="pdf" id='fileInput1' style='display: none;'>
+                <label for='fileInput1' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    File(pdf) &nbsp; <img src="upload_click.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
@@ -618,13 +624,15 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
-                    <!-- <label for="files" class="input">Select Book's pdf</label>
+                <!-- <label for="files" class="input">Select Book's pdf</label>
                     <input id="files" style="visibility:hidden;" type="file"> -->
 
-                    <input type="file" class="input" name="image" placeholder="images" >
-                    <div class="error">
+                <input type="file" class="input" id='fileInput2' name="image" style="display:none;">
+                <label for='fileInput2' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    photo &nbsp; <img src="upload_icon.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
@@ -632,18 +640,17 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
 
-                    <input type="Submit" name="upload" value="UPLOAD">
+                <input type="Submit" name="upload" value="UPLOAD">
 
-                
+
 
             </form>
-            
+
         </div>
     </div>
-
     
 
     

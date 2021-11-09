@@ -23,6 +23,11 @@ $isLoggedIn = isset($_SESSION['id']) ;
         <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
+    <?php if($isLoggedIn){?>
+            <div class="header_avatar-box">
+                <img class="header_avatar" src="avatar.png">
+            </div>
+            <?php }?>
 
     <section class="sciencefiction">
         <div id="particles-js"></div>
@@ -360,12 +365,146 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
     </section>
-       <div class="popup_bg3">
+        <!-- POPUPS -->
+
+    <div class="popup_bg1">
+        <div class="popup_content popup_content_signup">
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up
+            </h2>
+            <div class="popup_close1">+</div>
+            <form class="form form_signup" action="php/insert.php" method="POST">
+                <input type="Text" class="input" name="name" placeholder=" Your Name">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
+
+                    }
+                     
+                     ?>
+                </div>
+
+                <input type="Text" class="input" name="email" placeholder=" Your Email">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['email_error'])){
+                    echo $_SESSION["email_error"] ;
+                    }
+                     ?>
+                </div>
+
+                <input type="Password" class="input" name="password" placeholder="Enter password">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['password_error'])){
+                    echo $_SESSION['password_error'] ; 
+                    } ?>
+                </div>
+
+                <input type="Password" class="input" name="cpassword" placeholder="confirm password">
+                <div class="error">
+                    <?php
+                     if(isset($_SESSION['capassword_error'])){
+                    echo $_SESSION['cpassword_error'] ; 
+                      } ?>
+                </div>
+
+                <input type="Text" class="input" name="location" placeholder=" Your location" required>
+                <div class="error"></div>
+
+                <input type="number" class="input" name="phone" placeholder=" Your phone number">
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['phone_error'])){
+                    echo $_SESSION['phone_error'] ; 
+                    } ?>
+                </div>
+                <hr class="h-line">
+
+                <p><span><input type="checkbox" name="agree">&nbsp I agree to the terms of services</span></p>
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['agree_error'])){
+                    echo $_SESSION['agree_error'] ;  
+                    }?>
+                </div>
+
+                <input type="Submit" name="submit" value="sign-up">
+
+                <?php 
+                
+                // document.getElementById("popup-signup").dispatchEvent( new Event("click"))
+                $hasError = false ;
+
+
+                $errKeys = [
+                    'agree_error',
+'name_error',
+'email_error',
+'password_error',
+'cpassword_error',
+'phone_error'
+                ];
+
+                foreach($errKeys as $ekey){
+                    if(!empty($_SESSION[$ekey])){
+                        $hasError = true ;
+                    }
+                }
+
+                if($hasError){
+                    echo "<script> 
+                    window.addEventListener('load', function(){
+                    document.getElementById('popup-signup').dispatchEvent( new Event('click'));}) ;
+                    </script>" ;
+                }
+                
+                ?>
+
+                <?php 
+                
+                unset($_SESSION['agree_error']) ;
+                unset($_SESSION['name_error']) ;
+                unset($_SESSION['email_error']) ;
+                unset($_SESSION['password_error']) ;
+                unset($_SESSION['cpassword_error']) ;
+                unset($_SESSION['phone_error']) ;
+
+                
+                ?>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="popup_bg2">
+        <div class="popup_content popup_content_login">
+
+
+
+            <img class="avatar" src="avatar.png">
+            <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN
+            </h2>
+            <div class="popup_close2">+</div>
+            <form class="form form_login" action="php/handle.php" method="POST">
+
+                <input type="Text" class="input input_login" name="email" placeholder=" Your Email">
+                <input type="Password" class="input input_login" name="password" placeholder="Enter password">
+                <input type="Submit" name="login" value="Login">
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload
+            </h2>
             <div class="popup_close3">+</div>
-            
+
             <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
                 <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
                 <div class="error">
@@ -376,8 +515,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="aname" placeholder="Author Name">
+                </div>
+                <input type="Text" class="input" name="aname" placeholder="Author Name">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -386,18 +525,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
-                    <select class="input" name="cname" placevalue="category">
-                           <option value="0">Science Fiction</option>
-                            <option value="1">Romance</option>
-                            <option value="2">Horror</option>
-                            <option value="3">Fantasy</option>
-                            <option value="4">Mystery</option>
-                            <option value="5">History</option>
-                            <option value="5">Student</option>
+                </div>
+                <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                <select class="input" name="cname" placevalue="category" style="color:#6d6262;">
+                    <option value="0">Science Fiction</option>
+                    <option value="1">Romance</option>
+                    <option value="2">Horror</option>
+                    <option value="3">Fantasy</option>
+                    <option value="4">Mystery</option>
+                    <option value="5">History</option>
+                    <option value="5">Student</option>
 
-                        </select>
+                </select>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -406,8 +545,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="dname" placeholder="Description">
+                </div>
+                <!-- <input type="Text" class="input" name="dname" placeholder="Description"> -->
+
+                <textarea name="dname" id="" cols="1" rows="2.5" class="input" placeholder="Description"></textarea>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -416,33 +557,46 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
-                    <input type="file" class="input" name="pdf" placeholder="Pdfs">
+                <input type="file" class="input" name="pdf" id='fileInput1' style='display: none;'>
+                <label for='fileInput1' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    File(pdf) &nbsp; <img src="upload_click.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
+                    <?php
+                    if(isset($_SESSION['name_error'])){
+                        echo $_SESSION["name_error"] ;
 
-                    <!-- <label for="files" class="input">Select Book's pdf</label>
+                    }
+                     
+                     ?>
+                </div>
+
+                <!-- <label for="files" class="input">Select Book's pdf</label>
                     <input id="files" style="visibility:hidden;" type="file"> -->
 
-                    <input type="file" class="input" name="image" placeholder="images">
-
-
-                    <input type="Submit" name="upload" value="UPLOAD">
-
-                
-
-            </form>
-            <div class="error">
+                <input type="file" class="input" id='fileInput2' name="image" style="display:none;">
+                <label for='fileInput2' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    photo &nbsp; <img src="upload_icon.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
-                        
+
                     }
                      
                      ?>
-                    </div>
+                </div>
+
+
+                <input type="Submit" name="upload" value="UPLOAD">
+
+
+
+            </form>
+
         </div>
     </div>
-
 
 
     

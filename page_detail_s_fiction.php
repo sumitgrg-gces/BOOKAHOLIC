@@ -1,13 +1,15 @@
 <?php
 session_start();
 $isLoggedIn = isset($_SESSION['id']) ;
+
  
 
 ?>
 <html>
+
 <head>
-<title>BOOKAHOLIC</title>
- <meta charset="UTF-8">
+    <title>BOOKAHOLIC</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
@@ -15,60 +17,61 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
     <link rel="stylesheet" href="css/style.css">
     <style type="text/css">
-     
-.desc{
-  margin-top: 10px;
-  padding: 10px;
-  font-style: italic; 
-  font-size: 20px;
-  text-indent: 30px;
-}
+        .desc {
+            margin-top: 10px;
+            padding: 10px;
+            font-style: italic;
+            font-size: 20px;
+            text-indent: 30px;
+        }
     </style>
 
 
 
 </head>
-<body> 
-      <div class="header_logo-box">
+
+<body>
+    <div class="header_logo-box">
         <a href="index.php">
-        <img class="header_logo-1" src="img/logo_transparent.png">
+            <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
     <section class="sciencefiction">
         <div id="particles-js"></div>
-  <nav class="navigation_bar">
-        <div class="navigation_icon">
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-            <div class="line line-3"></div>
+        <nav class="navigation_bar">
+            <div class="navigation_icon">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
 
 
-        </div>
-        <?php if($isLoggedIn){?>
+            </div>
+            <?php if($isLoggedIn){?>
             <div class="header_avatar-box">
-            <img class="header_avatar" src="avatar.png">
-        </div>
-        <?php }?>
-        <ul class="navigation_list">
-            <?php if(!$isLoggedIn) { ?>
+                <img class="header_avatar" src="avatar.png">
+            </div>
+            <?php }?>
+            <ul class="navigation_list">
+                <?php if(!$isLoggedIn) { ?>
                 <li class="navigation_item"><a href="#" class="navigation_link" id="popup-signup">sign up</a></li>
-                
+
                 <li class="navigation_item"><a href="#" class="navigation_link" id="popup-login">log-in</a></li>
                 <?php } ?>
                 <li class="navigation_item"><a href="#" class="navigation_link">about us</a></li>
                 <li class="navigation_item"><a href="#" class="navigation_link">help</a></li>
                 <li class="navigation_item"><a href="#" class="navigation_link">home</a></li>
-                
+
                 <?php if($isLoggedIn) { ?>
-                    <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
-                    <li class="navigation_item"><a href="#" class="navigation_link" id="popup-update">Update/Edit</a></li>
-                
-                <li class="navigation_item"><a href="php/logout.php" class="navigation_link" id="popup-logout">log-out</a></li>
-            <?php } ?>
-        </ul>
-    
-    </nav>
-    <?php
+                <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
+                <li class="navigation_item"><a href="#" class="navigation_link" id="popup-update">Update/Edit</a></li>
+
+                <li class="navigation_item"><a href="php/logout.php" class="navigation_link"
+                        id="popup-logout">log-out</a></li>
+                <?php } ?>
+            </ul>
+
+        </nav>
+        <?php
 
 
     include 'php/connection.php';
@@ -83,60 +86,73 @@ $isLoggedIn = isset($_SESSION['id']) ;
               if( $Result = mysqli_fetch_array($query)) {
 
                 ?>
-<div class="row">
+        <div class="row">
 
-<div class="col-1-of-2">
-<div class="main">
-      <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="200" height="200">
+            <div class="col-1-of-2">
+                <div class="main">
+                    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="200" height="220">
 
-      <br/>
-      <div class="heading-tertiary" style = "color=red;">
-       
-     <h1><?php echo $Result['book name'];?></h1>
-     <h5>By: <?php echo $Result['author name'];?></h5>
-     <h5>BOOK ID:&nbsp<?php echo $Result['id'];?> </h5>
-     <h5>CATEGORY:&nbsp<?php echo $Result['category'];?> </h5>
-    </div>
-</div>
-</div>
-<div class="col-1-of-2"> 
-<div class="desc"> 
-   <div class="heading-tertiary"style = "margin:2px;" > <h3><label>Description:</label></h3></div>
+                    <br />
+                    <div class="heading-tertiary" style="color=red;">
 
-<span><?php echo $Result['description'];?></span>
-</div>
-</div>
+                        <h1><?php echo $Result['book name'];?></h1>
+                        <h5>By: <?php echo $Result['author name'];?></h5>
+                        <h5>BOOK ID:&nbsp<?php echo $Result['id'];?> </h5>
+                        <?php 
+                           if($Result['category']==0){
+                           $cat="Science Fiction";
+                              }
+                             if($Result['category']==1){
+                         $cat="Romance";
+                                }
+                             if($Result['category']==5){
+                                    $cat="Student";
+                                           }
+                         ?>
+                        <h5>CATEGORY:&nbsp<?php echo $cat;?> </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1-of-2">
+                <div class="desc">
+                    <div class="heading-tertiary" style="margin:2px;">
+                        <h3><label>Description:</label></h3>
+                    </div>
 
-
-
-</div>
-
-
-
-
-<br> 
-<br>
-<div class="row">
-<div class="col-1-of-2">
-<div class="u-center-text u-margin-bottom-small">
-<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" download > free Download</a>
-</div>
-
-</div>
-<div class="col-1-of-2">
-<div class="u-center-text u-margin-bottom-small">
-<a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" target="_blank">Read online</a>
-</div>
-
-</div>
-
-</div>
-              </section>
+                    <span><?php echo $Result['description'];?></span>
+                </div>
+            </div>
 
 
 
-<footer class="footer">
-        
+        </div>
+
+
+
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-1-of-2">
+                <div class="u-center-text u-margin-bottom-small">
+                    <a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" download> free Download</a>
+                </div>
+
+            </div>
+            <div class="col-1-of-2">
+                <div class="u-center-text u-margin-bottom-small">
+                    <a href="php/uploads/<?= $Result['pdf'] ?>" class="btn btn_ipage" target="_blank">Read online</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+
 
         <div class="footer_navigation">
             <ul class="footer_list">
@@ -162,18 +178,19 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
 
-    
 
 
 
-<?php }?> 
 
-<!-- POPUPS -->
+    <?php }?>
 
-<div class="popup_bg1">
+    <!-- POPUPS -->
+
+    <div class="popup_bg1">
         <div class="popup_content popup_content_signup">
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up</h2>
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Sign-up
+            </h2>
             <div class="popup_close1">+</div>
             <form class="form form_signup" action="php/insert.php" method="POST">
                 <input type="Text" class="input" name="name" placeholder=" Your Name">
@@ -185,7 +202,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
                 <input type="Text" class="input" name="email" placeholder=" Your Email">
                 <div class="error">
@@ -194,7 +211,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     echo $_SESSION["email_error"] ;
                     }
                      ?>
-                    </div>
+                </div>
 
                 <input type="Password" class="input" name="password" placeholder="Enter password">
                 <div class="error">
@@ -202,7 +219,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     if(isset($_SESSION['password_error'])){
                     echo $_SESSION['password_error'] ; 
                     } ?>
-                    </div>
+                </div>
 
                 <input type="Password" class="input" name="cpassword" placeholder="confirm password">
                 <div class="error">
@@ -210,18 +227,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      if(isset($_SESSION['capassword_error'])){
                     echo $_SESSION['cpassword_error'] ; 
                       } ?>
-                    </div>
+                </div>
 
                 <input type="Text" class="input" name="location" placeholder=" Your location" required>
                 <div class="error"></div>
-                
+
                 <input type="number" class="input" name="phone" placeholder=" Your phone number">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['phone_error'])){
                     echo $_SESSION['phone_error'] ; 
                     } ?>
-                    </div>
+                </div>
                 <hr class="h-line">
 
                 <p><span><input type="checkbox" name="agree">&nbsp I agree to the terms of services</span></p>
@@ -230,7 +247,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     if(isset($_SESSION['agree_error'])){
                     echo $_SESSION['agree_error'] ;  
                     }?>
-                    </div>
+                </div>
 
                 <input type="Submit" name="submit" value="sign-up">
 
@@ -263,7 +280,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 }
                 
                 ?>
-               
+
                 <?php 
                 
                 unset($_SESSION['agree_error']) ;
@@ -286,7 +303,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN</h2>
+            <h2 class="login_heading login_heading_login heading-secondary u-margin-bottom-small u-center-text">LOGIN
+            </h2>
             <div class="popup_close2">+</div>
             <form class="form form_login" action="php/handle.php" method="POST">
 
@@ -302,9 +320,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
     <div class="popup_bg3">
         <div class="popup_content popup_content_upload">
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload</h2>
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Upload
+            </h2>
             <div class="popup_close3">+</div>
-            
+
             <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
                 <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
                 <div class="error">
@@ -315,8 +334,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="aname" placeholder="Author Name">
+                </div>
+                <input type="Text" class="input" name="aname" placeholder="Author Name">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -325,18 +344,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
-                    <select class="input" name="cname" placevalue="category">
-                           <option value="0">Science Fiction</option>
-                            <option value="1">Romance</option>
-                            <option value="2">Horror</option>
-                            <option value="3">Fantasy</option>
-                            <option value="4">Mystery</option>
-                            <option value="5">History</option>
-                            <option value="5">Student</option>
+                </div>
+                <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                <select class="input" name="cname" placevalue="category" style="color:#6d6262;">
+                    <option value="0">Science Fiction</option>
+                    <option value="1">Romance</option>
+                    <option value="2">Horror</option>
+                    <option value="3">Fantasy</option>
+                    <option value="4">Mystery</option>
+                    <option value="5">History</option>
+                    <option value="5">Student</option>
 
-                        </select>
+                </select>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -345,8 +364,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="dname" placeholder="Description">
+                </div>
+                <!-- <input type="Text" class="input" name="dname" placeholder="Description"> -->
+
+                <textarea name="dname" id="" cols="1" rows="2.5" class="input" placeholder="Description"></textarea>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -355,10 +376,12 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
-                    <input type="file" class="input" name="pdf" placeholder="Pdfs">
-                    <div class="error">
+                <input type="file" class="input" name="pdf" id='fileInput1' style='display: none;'>
+                <label for='fileInput1' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    File(pdf) &nbsp; <img src="upload_click.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
@@ -366,13 +389,15 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
-                    <!-- <label for="files" class="input">Select Book's pdf</label>
+                <!-- <label for="files" class="input">Select Book's pdf</label>
                     <input id="files" style="visibility:hidden;" type="file"> -->
 
-                    <input type="file" class="input" name="image" placeholder="images" >
-                    <div class="error">
+                <input type="file" class="input" id='fileInput2' name="image" style="display:none;">
+                <label for='fileInput2' class='input' style='display: block; padding:7.5px; color:#6d6262; '>Choose
+                    photo &nbsp; <img src="upload_icon.png" alt="img" style="height:15px; width:15px;"></label>
+                <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
                         echo $_SESSION["name_error"] ;
@@ -380,26 +405,27 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
+                </div>
 
 
-                    <input type="Submit" name="upload" value="UPLOAD">
+                <input type="Submit" name="upload" value="UPLOAD">
 
-                
+
 
             </form>
-            
+
         </div>
     </div>
 
     <div class="popup_bg4">
-        <div class="popup_content popup_content_upload">
+        <div class="popup_content popup_content_update">
             <img class="avatar" src="avatar.png">
-            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Update</h2>
+            <h2 class="login_heading login_heading_signup heading-secondary u-margin-bottom-small u-center-text">Update
+            </h2>
             <div class="popup_close4">+</div>
-            
+
             <form class="form form_signup" action="" method="POST" enctype="multipart/form-data">
-            <input type="number" class="input" name="bname" placeholder=" Book ID" required>
+                <input type="number" class="input" name="id" placeholder=" Book ID" required>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -408,8 +434,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                <input type="Text" class="input" name="bname" placeholder=" Book Name" required>
+                </div>
+                <input type="Text" class="input" name="name" placeholder=" Book Name" required>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -418,8 +444,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="aname" placeholder="Author Name">
+                </div>
+                <input type="Text" class="input" name="author" placeholder="Author Name">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -428,18 +454,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
-                    <select class="input" name="cname" placevalue="category">
-                           <option value="0">Science Fiction</option>
-                            <option value="1">Romance</option>
-                            <option value="2">Horror</option>
-                            <option value="3">Fantasy</option>
-                            <option value="4">Mystery</option>
-                            <option value="5">History</option>
-                            <option value="5">Student</option>
+                </div>
+                <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
+                <select class="input" name="category" placevalue="category" style="color:#6d6262;">
+                    <option value="0">Science Fiction</option>
+                    <option value="1">Romance</option>
+                    <option value="2">Horror</option>
+                    <option value="3">Fantasy</option>
+                    <option value="4">Mystery</option>
+                    <option value="5">History</option>
+                    <option value="5">Student</option>
 
-                        </select>
+                </select>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -448,8 +474,8 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-                    <input type="Text" class="input" name="dname" placeholder="Description">
+                </div>
+                <input type="Text" class="input" name="desc" placeholder="Description">
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -458,29 +484,79 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     }
                      
                      ?>
-                    </div>
-
-                    
+                </div>
 
 
-                    <input type="Submit" name="upload" value="UPDATE/EDIT">
 
-                
+
+                <input type="Submit" name="update" value="UPDATE/EDIT">
+
+
 
             </form>
-            
+            <?php
+            include 'php/connection.php';
+
+            if(isset($_POST['update'])){
+                $id=$_POST['id'];
+                $name=$_POST['name'];
+                $au=$_POST['author'];
+                $cate=$_POST['category'];
+                $desc=$_POST['desc'];
+
+                $toShowMessage = false ;
+
+                if($name){
+                    $sql="update upload set `book name` ='$name' where id= $id";
+                    if(mysqli_query($connection, $sql)){
+                        $toShowMessage = true ;
+                    } else {
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+                    }
+                }
+                if($au){
+                    $sql="update upload set `author name` ='$au' where id= $id";
+                    if(mysqli_query($connection, $sql)){
+                        $toShowMessage = true ;                    } else {
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+                    }
+                }
+
+                if($cate){
+                    $sql="update upload set category ='$cate' where id= $id";
+                    if(mysqli_query($connection, $sql)){
+                        $toShowMessage = true ;                    } else {
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+                    }
+                }
+                if($desc){
+                    $sql="update upload set description ='$desc' where id= $id";
+                    if(mysqli_query($connection, $sql)){
+                        $toShowMessage = true ;
+                                        } else {
+                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($connection);
+                    }
+                }
+
+                if($toShowMessage){
+                    echo "<script>alert('updated'); </script>" ;
+                }
+                
+            }
+            ?>
+
         </div>
     </div>
 
 
 
 
-    
+
     <!-- <script type="text/javascript" src="particles.js"></script> -->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>
-<script src="javascript/show-on-scroll.js"></script>
+    <script src="javascript/show-on-scroll.js"></script>
 
 </body>
 

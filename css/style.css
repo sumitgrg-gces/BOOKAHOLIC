@@ -562,7 +562,10 @@ html {
     height: 635px; }
   .popup_content_upload {
     width: 400px;
-    height: 585px; }
+    height: 615px; }
+  .popup_content_update {
+    width: 400px;
+    height: 530px; }
 
 .popup_close1, .popup_close3, .popup_close4, .popup_close2 {
   position: absolute;

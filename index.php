@@ -405,9 +405,9 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <ul class="footer_list">
                 <li class="footer_item"><a class="footer_link" href="#">about us</a></li>
                 <li class="footer_item"><a class="footer_link" href="#">terms</a></li>
-                <li class="footer_item"><a class="footer_link" href="#">contact us</a></li>
+                <li class="footer_item"><a class="footer_link" href="mailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20bodmailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">contact us</a></li>
                 <li class="footer_item"><a class="footer_link" href="#">FAQ</a></li>
-                <li class="footer_item"><a class="footer_link" href="#">report bug</a></li>
+                <li class="footer_item"><a class="footer_link" href="mailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">report bug</a></li>
 
 
 

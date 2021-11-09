@@ -5,6 +5,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
   
 ?>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -13,70 +14,72 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
     <div class="header_logo-box">
         <a href="index.php">
-        <img class="header_logo-1" src="img/logo_transparent.png">
+            <img class="header_logo-1" src="img/logo_transparent.png">
         </a>
     </div>
     <?php if($isLoggedIn){?>
-            <div class="header_avatar-box">
-                <img class="header_avatar" src="avatar.png">
-            </div>
-            <?php }?>
+    <div class="header_avatar-box">
+        <img class="header_avatar" src="avatar.png">
+    </div>
+    <?php }?>
 
     <section class="sciencefiction">
         <div id="particles-js"></div>
-        
+
         <div class="sfh u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
                 science fiction
             </h2>
         </div>
-    <nav class="navigation_bar">
-        <div class="navigation_icon">
-            <div class="line line-1"></div>
-            <div class="line line-2"></div>
-            <div class="line line-3"></div>
+        <nav class="navigation_bar">
+            <div class="navigation_icon">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
 
-        </div>
-        
-          <ul class="navigation_list">
-            <?php if(!$isLoggedIn) { ?>
+            </div>
+
+            <ul class="navigation_list">
+                <?php if(!$isLoggedIn) { ?>
                 <li class="navigation_item"><a href="#" class="navigation_link" id="popup-signup">sign up</a></li>
-                
+
                 <li class="navigation_item"><a href="#" class="navigation_link" id="popup-login">log-in</a></li>
                 <?php } ?>
                 <li class="navigation_item"><a href="#" class="navigation_link">about us</a></li>
                 <li class="navigation_item"><a href="#" class="navigation_link">help</a></li>
                 <li class="navigation_item"><a href="#" class="navigation_link">home</a></li>
-                
-                <?php if($isLoggedIn) { ?>
-                    <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
-                
-                <li class="navigation_item"><a href="php/logout.php" class="navigation_link" id="popup-logout">log-out</a></li>
-            <?php } ?>
-        </ul>
-    
-    </nav>
-    
-    
-        
 
-        
+                <?php if($isLoggedIn) { ?>
+                <li class="navigation_item"><a href="#" class="navigation_link" id="popup-upload">upload</a></li>
+
+                <li class="navigation_item"><a href="php/logout.php" class="navigation_link"
+                        id="popup-logout">log-out</a></li>
+                <?php } ?>
+            </ul>
+
+        </nav>
+
+
+
+
+
         <div class="row">
             <div class="col-1-of-5">
                 <figure class="sfb">
-                    <img src="Category-science_fiction/a_wrinkle_in_time/17024.jpg"   class="sfbi">
+                    <img src="Category-science_fiction/a_wrinkle_in_time/17024.jpg" class="sfbi">
                     <div class="overlay">
                         <div class="overlay_content">BY: </div>
-                         <div class="overlay_content">Madeleine L'Engle </div>
+                        <div class="overlay_content">Madeleine L'Engle </div>
                         <div class="overlay_content">Written In:1960 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">A Wrinkle in Time </figcaption>
@@ -88,10 +91,10 @@ $isLoggedIn = isset($_SESSION['id']) ;
                     <img src="Category-science_fiction/ancestral_night/an.png" alt="" class="sfbi">
                     <div class="overlay">
                         <div class="overlay_content">BY: </div>
-                        
+
                         <div class="overlay_content">Elizabeth bear </div>
                         <div class="overlay_content">Written In:2019 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Ancestral night </figcaption>
@@ -105,7 +108,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Aldous Huxley </div>
                         <div class="overlay_content">Written In:1931 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Brave New World </figcaption>
@@ -119,7 +122,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Veronica Roth </div>
                         <div class="overlay_content">Written In:2011 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Divergent </figcaption>
@@ -139,7 +142,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                 </figure>
             </div>
-            
+
         </div>
         <div class="row">
             <div class="col-1-of-5">
@@ -150,7 +153,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Mary Shelley </div>
                         <div class="overlay_content">Written In:1818 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Frankenstein</figcaption>
@@ -165,7 +168,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">William Gibson </div>
                         <div class="overlay_content">Written In:1984 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Neuromancer</figcaption>
@@ -180,7 +183,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">M.R. Carey </div>
                         <div class="overlay_content">Written In:2014 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Girl With All the Gifts </figcaption>
@@ -195,7 +198,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Suzanne Collins </div>
                         <div class="overlay_content">Written In:2008 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Hunger Games</figcaption>
@@ -210,14 +213,14 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Mary Kowal </div>
                         <div class="overlay_content">Written In:2018 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Calculating Stars</figcaption>
 
                 </figure>
             </div>
-            
+
         </div>
         <div class="row">
             <div class="col-1-of-5">
@@ -228,11 +231,11 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Adrian Tchaikovsky </div>
                         <div class="overlay_content">Written In:2015 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Children Of Time</figcaption>
-                 </figure>
+                </figure>
             </div>
             <div class="col-1-of-5">
                 <figure class="sfb">
@@ -242,7 +245,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content"> James Dashner</div>
                         <div class="overlay_content">Written In:2009 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Maze Runner</figcaption>
@@ -257,7 +260,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content"> Neal Stephenson</div>
                         <div class="overlay_content">Written In:1992 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">Snow Crash</figcaption>
@@ -272,7 +275,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Audrey Niffenegger </div>
                         <div class="overlay_content">Written In:2003 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Time Traveller's Wife</figcaption>
@@ -287,14 +290,14 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
                         <div class="overlay_content">Andy Weir </div>
                         <div class="overlay_content">Written In:2011 </div>
-                        
+
 
                     </div>
                     <figcaption class="sfbc u-caption-colorful">The Martian</figcaption>
 
                 </figure>
             </div>
-            
+
         </div>
 
         <?php
@@ -307,13 +310,13 @@ $isLoggedIn = isset($_SESSION['id']) ;
               
                
                ?>
-        
-               
-            
-              
-      <div class="row"> 
-                 
-           
+
+
+
+
+        <div class="row">
+
+
 
             <?php 
             $col=0;
@@ -321,31 +324,32 @@ $isLoggedIn = isset($_SESSION['id']) ;
               
             
            
-            ?>  
-            
-      
-       <div class="col-1-of-5">
-        <?php  $_SESSION['bname']=$Result['book name'];  ?>
+            ?>
+
+
+            <div class="col-1-of-5">
+                <?php  $_SESSION['bname']=$Result['book name'];  ?>
                 <figure class="sfb">
-                 <a href="page_detail_s_fiction.php?id=<?= $Result['id'] ?>">  <img src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
+                    <a href="page_detail_s_fiction.php?id=<?= $Result['id'] ?>"> <img
+                            src="php/uploads/<?php echo $Result['image'];?>" alt="pic" class="sfbi">
 
-                    <div class="overlay">
-                        <div class="overlay_content">BY: </div>
+                        <div class="overlay">
+                            <div class="overlay_content">BY: </div>
 
-                        <div class="overlay_content"><?php echo $Result['author name'];  ?></div>
-                        <div class="overlay_content">Written In:2011 </div>
-                        
+                            <div class="overlay_content"><?php echo $Result['author name'];  ?></div>
+                            <div class="overlay_content">Uploaded In:2021 </div>
 
-                    </div>
-                </a>
+
+                        </div>
+                    </a>
                     <figcaption class="sfbc u-caption-colorful"><?php echo $Result['book name'];  ?></figcaption>
 
 
                 </figure>
             </div>
-            
-        
-        <?php
+
+
+            <?php
         $col++;
         
      if($col%5==0) {
@@ -354,18 +358,18 @@ $isLoggedIn = isset($_SESSION['id']) ;
        }
       
       ?>
-       <!--  <script type="text/javascript">
+            <!--  <script type="text/javascript">
 
         function Open(){
         header('../upload/page.php');
       }
   </script> -->
-       </div>
-        
+        </div>
+
 
 
     </section>
-        <!-- POPUPS -->
+    <!-- POPUPS -->
 
     <div class="popup_bg1">
         <div class="popup_content popup_content_signup">
@@ -600,12 +604,12 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
 
 
-    
+
     <script type="text/javascript" src="particles.js"></script>
 
     <script type="text/javascript" src="app.js"></script>
     <script src="javascript/script.js"></script>
-<script src="javascript/show-on-scroll.js"></script>
+    <script src="javascript/show-on-scroll.js"></script>
 
 </body>
 

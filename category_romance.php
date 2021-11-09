@@ -332,7 +332,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                         <div class="overlay_content">BY: </div>
 
                         <div class="overlay_content"><?php echo $Result['author name'];  ?></div>
-                        <div class="overlay_content">Written In:2011 </div>
+                        <div class="overlay_content">Uploaded In:2021 </div>
                         
 
                     </div>

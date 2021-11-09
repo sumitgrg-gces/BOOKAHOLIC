@@ -90,7 +90,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
 
             <div class="col-1-of-2">
                 <div class="main">
-                    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="200" height="220">
+                    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="185" height="220">
 
                     <br />
                     <div class="heading-tertiary" style="color=red;">
@@ -158,9 +158,9 @@ $isLoggedIn = isset($_SESSION['id']) ;
             <ul class="footer_list">
                 <li class="footer_item"><a class="footer_link" href="#">about us</a></li>
                 <li class="footer_item"><a class="footer_link" href="#">terms</a></li>
-                <li class="footer_item"><a class="footer_link" href="#">contact us</a></li>
+                <li class="footer_item"><a class="footer_link" href="mailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20bodmailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">contact us</a></li>
                 <li class="footer_item"><a class="footer_link" href="#">FAQ</a></li>
-                <li class="footer_item"><a class="footer_link" href="#">report bug</a></li>
+                <li class="footer_item"><a class="footer_link" href="mailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20bodmailto:be2018se612@gces.edu.np?cc=be2018se614@gces.edu.np&bcc=be2018se621@gces.edu.np&subject=The%20subject%20of%20the%20email&body=The%20body%20of%20the%20email">report bug</a></li>
 
 
 
@@ -457,6 +457,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                 </div>
                 <!-- <input type="Text" class="input" name="cname" placeholder="category"> -->
                 <select class="input" name="category" placevalue="category" style="color:#6d6262;">
+                    <option>Select Category</option>
                     <option value="0">Science Fiction</option>
                     <option value="1">Romance</option>
                     <option value="2">Horror</option>
@@ -475,7 +476,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                 </div>
-                <input type="Text" class="input" name="desc" placeholder="Description">
+                <textarea name="desc" id="" cols="1" rows="2.5" class="input" placeholder="Description"></textarea>
                 <div class="error">
                     <?php
                     if(isset($_SESSION['name_error'])){
@@ -485,8 +486,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                 </div>
-
-
+                
 
 
                 <input type="Submit" name="update" value="UPDATE/EDIT">

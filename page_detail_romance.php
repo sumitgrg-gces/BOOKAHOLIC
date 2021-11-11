@@ -89,11 +89,11 @@ $isLoggedIn = isset($_SESSION['id']) ;
         <div class="row">
 
             <div class="col-1-of-2">
-                <div class="main"  >
-                    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="185" height="220" >
+                <div class="main">
+                    <img src="php/uploads/<?php echo $Result['image'];?>" alt="image" width="185" height="220">
 
                     <br />
-                    <div class="heading-tertiary">
+                    <div class="heading-tertiary" style="color=red;">
 
                         <h1><?php echo $Result['book name'];?></h1>
                         <h5>By: <?php echo $Result['author name'];?></h5>
@@ -486,8 +486,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                      
                      ?>
                 </div>
-
-
+                
 
 
                 <input type="Submit" name="update" value="UPDATE/EDIT">

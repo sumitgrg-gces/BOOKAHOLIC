@@ -3,7 +3,7 @@ session_start() ;
 require "connection.php";
 
 $e=$_POST["email"];
-$p=$_POST["password"];
+$p=base64_encode($_POST["password"]);
 
 $query="SELECT * FROM `signnn-up` WHERE email='$e' && password='$p'";
 // echo $query;die();

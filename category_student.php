@@ -301,7 +301,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
         
             include 'php/connection.php';
  
-               $selectquery= "select * from upload where category='0'";//from select tag we select 'romance'
+               $selectquery= "select * from upload where category='5'";//from select tag we select 'romance'
 
                $query = mysqli_query($connection,$selectquery) or die('couldnt connect');
               

@@ -131,7 +131,7 @@ $isLoggedIn = isset($_SESSION['id']) ;
                         <div class="features_text">
                             <h3 class="heading-tertiary u-margin-bottom-small u-caption-colorful">User Friendly</h3>
                             <p>
-                                This web app has an e-commerce platform where users after validated registration can buy & sell books with one another. However, for the ease of the development connection within them will solely depend on email & phone number.
+                            Interface of the web-app is well customized and easy to understand for the targeted group. With great work on UI of this site, and carefully understanding the health problems, students do not need to worry about eyes strains and can keep studying our books for a long time.
 
                             </p>
                         </div>

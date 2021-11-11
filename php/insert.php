@@ -50,6 +50,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['password_error'] = "Your Password Must Contain At Least 6 Characters!";
             $isvalid=false; 
         }
+        
         elseif(!preg_match("#[0-9]+#",$password)) {
             $_SESSION['password_error'] = "Include at least one number!";
             $isvalid=false; 
@@ -109,7 +110,7 @@ if (isset($_POST['submit'])) {
 if(isset($_POST['submit'])){
     $n=$_POST['name'];
     $e=$_POST['email'];
-    $password=  md5($_POST['password'],TRUE);
+    $password=  base64_encode($_POST['password']);
 
     $l=$_POST['location'];
 	$p = $_POST['phone'];
